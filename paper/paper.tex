@@ -106,14 +106,14 @@ we (i)~clarify the interplay of DT and PdM in aftersales, (ii)~compare the predi
 
 The concept of the digital twin was first introduced by Grieves~\cite{grieves2014} in a white paper on manufacturing excellence, where it described a virtual replica of a physical product maintained in synchrony with its real-world counterpart throughout the entire asset lifecycle. Since then, the concept has expanded into aerospace, energy, and automotive domains~\cite{wang2023review,wise_go_2000}.
 
-In the automotive domain, this general architecture maps directly onto the connected vehicle. The physical entity is the vehicle itself, equipped with on-board sensors and an On-Board Diagnostic (OBD) interface. The virtual representation is a cloud-hosted model mirroring component states, degradation histories, and operating conditions. The synchronising link is the over-the-air (OTA) telematics connection, which transmits telemetry to the cloud and returns configuration updates to the vehicle~\cite{lopes2025vehicledt,coppola2016connected,zhang2009connected}, transforming the vehicle from a periodically inspected asset into a continuously observed system --- a shift first documented for automotive applications by Zhang et al.~\cite{zhang2009connected}. Figure~\ref{fig:dt-architecture} illustrates this three-layer architecture. Architecturally, automotive digital twins are typically realised as modular, microservice-based platforms. A data ingestion layer normalises heterogeneous sensor streams — including vibration, temperature, voltage, and Controller Area Network (CAN)-bus signals — before forwarding them to a model layer that maintains the current state of each monitored component~\cite{aichi2024multilayered,karthick2025simulating}. The outputs are then exposed to external consumers such as Original Equipment Manufacturer (OEM) backends or workshop notification services~\cite{lopes2025vehicledt,abougrad2026xai}.
+In the automotive domain, this general architecture maps directly onto the connected vehicle. The physical entity is the vehicle itself, equipped with on-board sensors and an On-Board Diagnostic (OBD) interface. The virtual representation is a cloud-hosted model mirroring component states, degradation histories, and operating conditions. The synchronising link is the over-the-air (OTA) telematics connection, which transmits telemetry to the cloud and returns configuration updates to the vehicle~\cite{lopes2025vehicledt,coppola2016connected,zhang2009connected}, transforming the vehicle from a periodically inspected asset into a continuously observed system --- a shift first documented for automotive applications by Zhang et al.~\cite{zhang2009connected}.
 
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.65\linewidth]{../pictures/DT-Architecture.png}
-  \caption{Three-layer architecture of an automotive digital twin.}
-  \label{fig:dt-architecture}
-\end{figure}
+%\begin{figure}[h]
+%  \centering
+%  \includegraphics[width=0.65\linewidth]{../pictures/DT-Architecture.png}
+%  \caption{Three-layer architecture of an automotive digital twin.}
+%  \label{fig:dt-architecture}
+%\end{figure}
 
 
 %\begin{figure}[htbp]
