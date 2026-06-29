@@ -178,36 +178,55 @@ across a plausible parameter band~\cite{cooper_gap_2015}.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=1.0\columnwidth]{../pictures/Lifecycle Aftersales}
-  \caption{Aftersales lifecycle: current interval-based state (left) versus DT/PdM-enabled target state (right).}
-  \label{fig:lifecycle}
+  \includegraphics[width=1.0\columnwidth]{../pictures/Lifecycle Aftersales previous.png}
+  \caption{Aftersales lifecycle: current interval-based state }
+  \label{fig:lifecycle_previous}
 \end{figure}
 
-Figure~\ref{fig:lifecycle} contrasts the interval-based current state with the DT/PdM-enabled target state along the customer journey from vehicle operation through service execution to post-repair follow-up. It illustrates the stages at which reactive servicing causes value leakage and how a predictive architecture can retain this value within the franchised dealership. Nach Bild überarbeitet noch schreiben evtl. die auszuführenden Akteure??? Achten hier auf Formatierung, ABstände der Überschriften noch zu groß!! So muss sein wie hier, die Platzhalter Platzhalter... Platzhalter Platzhalter... Platzhalter Platzhalter... 
+Figure~\ref{fig:lifecycle_previous} shows the interval-based current state along the customer journey from vehicle operation through service execution to post-repair follow-up, identifying the actors involved at each stage and the points at which reactive servicing causes value leakage. The processes are separated into a physical and a digital lane, making the extent of digital involvement at each stage directly comparable. The corresponding DT/PdM-enabled target state is shown separately in Figure~\ref{fig:lifecycle_future} below.
 
 \paragraph{Current state.}
 In the interval-based current state, the customer journey is driven by fixed
 manufacturer schedules and visible failure signals. The vehicle operates without
 continuous component-state monitoring; no wear forecast is computed during
-normal driving. Service appointments are initiated either by a time- or
-mileage-triggered reminder displayed on the instrument cluster, or by an acute
-fault manifesting as a warning lamp or perceptible degradation in braking or
-ride performance. Both triggers are late-stage events: the mileage interval is
-set conservatively to cover the worst-case fleet population, so most vehicles
-reach the workshop with substantial remaining part life; the fault-driven trigger
-often arrives after the wear limit has already been exceeded~\cite{abougrad2026xai}.
-Because no proactive outreach precedes the fault, the customer exercises free
-choice of workshop at the moment of highest urgency, and the majority of these
-unplanned repairs are captured by independent third-party
-garages~\cite{dat2026report}. This leakage intensifies with
-vehicle age---franchised-dealer share drops from 86\,\% for vehicles under
-three years old to just 39\,\% for those over six years~\cite{dat2026report}---and
-with cost-driven customer behavior: 43\,\% of German vehicle owners now perform
-only the minimum maintenance~\cite{dat2026report}. The dealership's contact with
-the customer is therefore reduced to the statutory inspection cycle, limiting both
-retention and upselling opportunity.
+normal driving. The lifecycle is initiated by the customer rather than the
+dealership: it begins with the customer's contact to arrange the service
+appointment, and the subsequent steps remain largely in the customer's hands.
+The trigger is either a time- or mileage-triggered reminder or an acute fault
+such as a warning lamp. Both are late-stage: the mileage interval is set
+conservatively, so most vehicles still have substantial remaining part life,
+while the fault-driven trigger often arrives after the wear limit has already
+been exceeded~\cite{abougrad2026xai}. Most of these steps are controlled by
+the customer, while only a few are captured digitally, since no data basis on
+the vehicle's component state exists. Because no
+proactive outreach precedes the fault, the customer exercises free choice of
+workshop at the moment of highest urgency, and the majority of these unplanned
+repairs are captured by independent third-party garages~\cite{dat2026report}.
+This leakage intensifies with vehicle age---franchised-dealer share drops from
+86\,\% for vehicles under three years old to just 39\,\% for those over six
+years~\cite{dat2026report}---and with cost-driven customer behavior: 43\,\% of
+German vehicle owners now perform only the minimum maintenance~\cite{dat2026report}.
+The dealership's contact with the customer is therefore reduced to the
+statutory inspection cycle, limiting both retention and upselling opportunity.
+Moreover, most of these steps are physical in nature and, in the absence of a
+data source capturing them, cannot be represented in the digital lane.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1.0\columnwidth]{../pictures/Lifecycle Aftersales future.png}
+  \caption{Aftersales lifecycle: DT/PdM-enabled target state }
+  \label{fig:lifecycle_future}
+\end{figure}
 
 \paragraph{Target state.}
+The DT is the core enabler of this digital process layer. It allows
+the customer to be involved only to the extent necessary, raising the customer
+experience compared to the current state. The lifecycle is now initiated and
+steered by the PdM forecast rather than by the customer. Not only the
+required documents but also the processes themselves become digitally
+traceable, and the resulting data can additionally be analyzed for upselling,
+increasing service revenue. Nevertheless, some processes, such as the physical
+inspection, cannot be digitalized by DT and PdM.
 In the DT/PdM-enabled target state, the vehicle's digital twin continuously
 aggregates sensor streams, OBD signals, and OTA telemetry to maintain an
 up-to-date virtual representation of each monitored
