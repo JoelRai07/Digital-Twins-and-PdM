@@ -1,6 +1,6 @@
 \documentclass[conference,a4paper]{IEEEtran}
 \IEEEoverridecommandlockouts
-
+\usepackage{float}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{cite}
@@ -60,7 +60,7 @@
 %        wichtigste Ergebnisse und Fazit (~150-250 Woerter)
 % ============================================================
 \begin{abstract}
-This paper investigates the effect of digital-twin-based predictive maintenance on the automotive aftersales domain, focusing on the German passenger-car market. A model-based gap analysis is conducted to compare the interval-based current state against a digital-twin-enabled target state along the full customer journey. Based on this comparison, the business potential is quantified using a transparent assumption framework anchored in published German market data. The results show that proactive, data-driven service recommendations raise the repair capture rate from 40 to 70 percent, increasing wear-part gross profit by approximately 53 EUR per vehicle per year and 263,000 EUR annually across a 5,000-vehicle fleet. Customer touchpoints grow from 1.6 to roughly 2.7 per year, each representing an additional advisory and upselling opportunity. The findings establish a transparent, contestable model of the potential that dealerships and OEMs can use to evaluate and plan the integration of digital-twin-based predictive maintenance into their aftersales operations.
+This paper investigates the effect of digital-twin-based predictive maintenance on the automotive aftersales domain, focusing on the German passenger-car market. A model-based gap analysis is conducted to compare the interval-based current state against a digital-twin-enabled target state along the full customer journey. Based on this comparison, the business potential is quantified using a transparent assumption framework anchored in published German market data. The results show that proactive, data-driven service recommendations raise the repair capture rate from 40 to 70 percent, increasing wear-part gross profit by approximately 53 EUR per vehicle per year and 263,000 EUR annually across a 5,000-vehicle fleet. Customer touchpoints grow from 1.6 to roughly 2.7 per year, each representing an additional advisory and upselling opportunity. The analysis further identifies data access under the EU Data Act, rather than technology maturity, as the dominant adoption barrier. The findings establish a transparent, contestable model of the potential that dealerships and OEMs can use to evaluate and plan the integration of digital-twin-based predictive maintenance into their aftersales operations.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -176,7 +176,7 @@ across a plausible parameter band~\cite{cooper_gap_2015}.
 
 \subsection{Current- and Target-State Lifecycle Comparison}\label{sec:lifecycle}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
   \centering
   \includegraphics[width=1.0\columnwidth]{../pictures/Lifecycle Aftersales previous.png}
   \caption{Aftersales lifecycle: current interval-based state}
@@ -211,7 +211,7 @@ statutory inspection cycle, limiting both retention and upselling opportunity.
 Moreover, most of these steps are physical in nature and, in the absence of a
 data source capturing them, cannot be represented in the digital lane.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
   \centering
   \includegraphics[width=1.0\columnwidth]{../pictures/Lifecycle Aftersales future.png}
   \caption{Aftersales lifecycle: DT/PdM-enabled target state}
@@ -228,7 +228,8 @@ traceable, and the resulting data can additionally be analysed for upselling,
 increasing service revenue. Nevertheless, some processes, such as the physical
 inspection, cannot be digitalised by DT and PdM.
 In the DT/PdM-enabled target state, the vehicle's digital twin continuously
-aggregates sensor streams, OBD signals, and OTA telemetry to maintain an
+aggregates sensor streams, OBD signals, operating parameters, and
+environmental conditions via OTA telemetry to maintain an
 up-to-date virtual representation of each monitored
 component~\cite{lopes2025vehicledt}. Machine-learning models operating on this
 virtual representation compute remaining-useful-life estimates for wear parts
@@ -477,6 +478,14 @@ intent at the originating dealership~\cite{challagalla_proactive_2009,gonzalez_s
 The sensitivity analysis confirms robustness: even at $\cSoll = 0.50$, the
 fleet-level gain remains approximately \eur\,90k per year---a positive business
 case under any plausible conversion scenario.
+
+The model deliberately quantifies only the benefit side: investment costs for
+the DT platform, CRM integration, and consent infrastructure are OEM- and
+dealer-specific and not publicly available. The gross-profit delta nevertheless
+defines a break-even threshold---at \eur\,53 per vehicle per year, the system
+pays off as long as its total running cost remains below roughly \eur\,4.40 per
+connected vehicle per month---giving practitioners a concrete benchmark against
+vendor pricing rather than a speculative return-on-investment figure.
 
 \subsection{The Non-Technical Barrier}
 
