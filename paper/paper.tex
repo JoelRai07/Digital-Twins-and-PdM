@@ -100,7 +100,7 @@ the study (i)~clarifies the interplay of DT and PdM in aftersales, (ii)~compares
 
 \subsection{Digital Twins}
 
-The concept of the digital twin was first introduced by Grieves~\cite{grieves2014} in a white paper on manufacturing excellence, where it described a virtual replica of a physical product maintained in synchrony with its real-world counterpart throughout the entire asset lifecycle. Since then, the concept has expanded into aerospace, energy, and automotive domains~\cite{wang2023review,wise_go_2000}.
+The concept of the digital twin was formalised by Grieves~\cite{grieves2014} in a white paper on manufacturing excellence, where it described a virtual replica of a physical product maintained in synchrony with its real-world counterpart throughout the entire asset lifecycle. Since then, the concept has expanded into aerospace, energy, and automotive domains~\cite{wang2023review,wise_go_2000}.
 
 In the automotive domain, this general architecture maps directly onto the connected vehicle. The physical entity is the vehicle itself, equipped with on-board sensors and an On-Board Diagnostic (OBD) interface. Its virtual representation is a cloud-hosted model mirroring component states, degradation histories, and operating conditions. The synchronizing link is the over-the-air (OTA) telematics connection, which transmits telemetry data to the cloud and returns configuration updates to the vehicle~\cite{lopes2025vehicledt,coppola2016connected,zhang2009connected}. Together, this setup transforms the vehicle from a periodically inspected asset into a continuously monitored system --- a shift first documented for automotive applications by Zhang et al.~\cite{zhang2009connected}.
 
@@ -123,17 +123,17 @@ In the automotive domain, this general architecture maps directly onto the conne
 
 Vehicle maintenance strategies form a maturity hierarchy: reactive maintenance repairs only after failure \cite{abougrad2026xai}; preventive maintenance schedules service at fixed mileage or time intervals, leading to either premature replacement or undetected wear \cite{abougrad2026xai,aichi2024multilayered}; condition-based maintenance (CBM) couples the service decision to sensor thresholds \cite{aichi2024multilayered}; and PdM extends CBM by forecasting the future evolution of degradation, estimating the remaining time or distance until failure \cite{kumar2025suspension,abougrad2026xai}.
 
-At this scale, PdM is not a stand-alone technique but a service layer built on a DT of the vehicle. As described by Lopes et al.~\cite{lopes2025vehicledt} and Hadraoui et al.~\cite{aichi2024multilayered}, the DT provides the synchronized virtual representation against which sensor streams are interpreted, anomalies detected, and RUL estimates computed. In current automotive DT architectures, predictive analytics is therefore typically positioned as a dedicated microservice within the DT's analytics core \cite{lopes2025vehicledt,karthick2025simulating,abougrad2026xai}.
+At this scale, PdM is not a stand-alone technique but a service layer built on a DT of the vehicle. As described by Lopes et al.~\cite{lopes2025vehicledt} and El Hadraoui et al.~\cite{aichi2024multilayered}, the DT provides the synchronized virtual representation against which sensor streams are interpreted, anomalies detected, and RUL estimates computed. In current automotive DT architectures, predictive analytics is therefore typically positioned as a dedicated microservice within the DT's analytics core \cite{lopes2025vehicledt,karthick2025simulating,abougrad2026xai}.
 
 \subsection{Machine Learning in PdM}
 
-Three main problem classes structure ML-based PdM. Classification assigns sensor patterns to discrete fault categories using Support Vector Machines, Random Forests, or Convolutional Neural Networks on time-frequency representations of vibration signals \cite{kumar2025suspension,abougrad2026xai}. Regression targets RUL estimation, dominated by Long Short-Term Memory (LSTM) networks for their ability to model long-range temporal dependencies in degradation signals \cite{karthick2025simulating,abougrad2026xai}. Anomaly detection operates without explicit labels, learning nominal behavior and flagging deviations as failure precursors \cite{karthick2025simulating,abougrad2026xai}. AbouGrad et al. report classification accuracies of approximately 89\% for vibration-based fault detection and 92\% for LSTM-based RUL estimation in automotive contexts, though they note that these figures depend strongly on dataset quality and operating conditions~\cite{abougrad2026xai}. In the aftersales context, RUL regression is the primary mechanism behind proactive service recommendations, whereas anomaly detection serves as an early-warning layer for components without established wear curves.
+Three main problem classes structure ML-based PdM. Classification assigns sensor patterns to discrete fault categories using Support Vector Machines, Random Forests, or Convolutional Neural Networks on time-frequency representations of vibration signals \cite{kumar2025suspension,abougrad2026xai}. Regression targets RUL estimation, dominated by Long Short-Term Memory (LSTM) networks for their ability to model long-range temporal dependencies in degradation signals \cite{karthick2025simulating,abougrad2026xai}. Anomaly detection operates without explicit labels, learning nominal behaviour and flagging deviations as failure precursors \cite{karthick2025simulating,abougrad2026xai}. AbouGrad et al. report classification accuracies of approximately 89\% for vibration-based fault detection and 92\% for LSTM-based RUL estimation in automotive contexts, though they note that these figures depend strongly on dataset quality and operating conditions~\cite{abougrad2026xai}. In the aftersales context, RUL regression is the primary mechanism behind proactive service recommendations, whereas anomaly detection serves as an early-warning layer for components without established wear curves.
 
 \subsection{Automotive Aftersales}
 
-Aftersales encompasses post-purchase activities that enable customers to access supplier services and resolve product issues through continuous maintenance\cite{mertins_servitization_1999}. In the automotive context, it represents a dedicated business function comprising maintenance, repair, and warranty offerings to maximize product usage over the entire asset lifecycle while meeting economic and customer-related objectives \cite{sabbagha_impact_2016,balinado_effect_2021}. Building post-sales relationships strengthens customer loyalty, yields actionable insights, and creates upselling and cross-selling opportunities, making the aftersales market increasingly attractive as demand for higher-quality service expands \cite{sabbagha_impact_2016}.  
+Aftersales encompasses post-purchase activities that enable customers to access supplier services and resolve product issues through continuous maintenance~\cite{mertins_servitization_1999}. In the automotive context, it represents a dedicated business function comprising maintenance, repair, and warranty offerings to maximize product usage over the entire asset lifecycle while meeting economic and customer-related objectives \cite{sabbagha_impact_2016,balinado_effect_2021}. Building post-sales relationships strengthens customer loyalty, yields actionable insights, and creates upselling and cross-selling opportunities, making the aftersales market increasingly attractive as demand for higher-quality service expands \cite{sabbagha_impact_2016}.  
 
-Historically, once the warranty expires, customer engagement with the dealership tends to decline. Within the automotive industry, aftersales services represent a significant source of revenue, with profit margins considerably substantially higher than those generated through vehicle sales~\cite{macbryde_role_2006}. From an economic perspective, the aftersales market has been identified as larger than the primary product sales market across various industries~\cite{bundschuh_how_2003,editorial_universitat_politecnica_de_valencia_impact_2015,wise_go_2000}. Retaining these customers therefore requires modern service processes~\cite{mertins_servitization_1999}.
+Historically, once the warranty expires, customer engagement with the dealership tends to decline. Within the automotive industry, aftersales services represent a significant source of revenue, with profit margins substantially higher than those generated through vehicle sales~\cite{macbryde_role_2006}. From an economic perspective, the aftersales market has been identified as larger than the primary product sales market across various industries~\cite{bundschuh_how_2003,editorial_universitat_politecnica_de_valencia_impact_2015,wise_go_2000}. Retaining these customers therefore requires modern service processes~\cite{mertins_servitization_1999}.
 
 Proactive aftersales improves customer satisfaction and retention by addressing issues before they are perceived by the customer, enabling more effective service interactions~\cite{challagalla_proactive_2009}. This requires tailoring services to customer needs through the integration of operational and informational data~\cite{mertins_servitization_1999}. In the present context, DT-based PdM approaches support predictive interventions and improved asset lifecycle optimization, resulting in reduced costs, increased customer satisfaction, and extended asset lifetimes~\cite{gonzalez-pridaDigitalTransformationAftersales2025}.
 
@@ -179,13 +179,13 @@ across a plausible parameter band~\cite{cooper_gap_2015}.
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=1.0\columnwidth]{../pictures/Lifecycle Aftersales previous.png}
-  \caption{Aftersales lifecycle: current interval-based state }
+  \caption{Aftersales lifecycle: current interval-based state}
   \label{fig:lifecycle_previous}
 \end{figure}
 
 Figure~\ref{fig:lifecycle_previous} illustrates the interval-based current state along the customer journey from vehicle operation through service execution to post-repair follow-up, identifying the actors involved at each stage and the points at which reactive servicing causes value leakage. The processes are separated into a physical and a digital lane, making the extent of digital involvement at each stage directly comparable. The corresponding DT/PdM-enabled target state is presented separately in Figure~\ref{fig:lifecycle_future}.
 
-\paragraph{Current state.}
+\paragraph{Current state}
 In the interval-based current state, the customer journey is driven by fixed
 manufacturer schedules and visible failure signals. The vehicle operates without
 continuous component-state monitoring; no wear forecast is computed during
@@ -204,7 +204,7 @@ workshop at the moment of highest urgency, and the majority of these unplanned
 repairs are captured by independent third-party garages~\cite{dat2026report}.
 This leakage intensifies with vehicle age---franchised-dealer share drops from
 86\,\% for vehicles under three years old to just 39\,\% for those over six
-years~\cite{dat2026report}---and with cost-driven customer behavior: 43\,\% of
+years~\cite{dat2026report}---and with cost-driven customer behaviour: 43\,\% of
 German vehicle owners now perform only the minimum maintenance~\cite{dat2026report}.
 The dealership's contact with the customer is therefore reduced to the
 statutory inspection cycle, limiting both retention and upselling opportunity.
@@ -213,20 +213,20 @@ data source capturing them, cannot be represented in the digital lane.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=1.04\columnwidth]{../pictures/Lifecycle Aftersales future.png}
-  \caption{Aftersales lifecycle: DT/PdM-enabled target state }
+  \includegraphics[width=1.0\columnwidth]{../pictures/Lifecycle Aftersales future.png}
+  \caption{Aftersales lifecycle: DT/PdM-enabled target state}
   \label{fig:lifecycle_future}
 \end{figure}
 
-\paragraph{Target state.}
+\paragraph{Target state}
 The DT is the core enabler of this digital process layer. It allows
 the customer to be involved only to the extent necessary, raising the customer
 experience compared to the current state. The lifecycle is now initiated and
 steered by the PdM forecast rather than by the customer. Not only the
 required documents but also the processes themselves become digitally
-traceable, and the resulting data can additionally be analyzed for upselling,
+traceable, and the resulting data can additionally be analysed for upselling,
 increasing service revenue. Nevertheless, some processes, such as the physical
-inspection, cannot be digitalized by DT and PdM.
+inspection, cannot be digitalised by DT and PdM.
 In the DT/PdM-enabled target state, the vehicle's digital twin continuously
 aggregates sensor streams, OBD signals, and OTA telemetry to maintain an
 up-to-date virtual representation of each monitored
@@ -271,7 +271,7 @@ A2 & Annual mileage        & 13{,}140 km/yr~\cite{dat2026report} \\
 A3 & First-owner horizon   & 8 years~\cite{mckinsey2025dealer} \\
 A4 & Workshop visits       & 1.6/yr~\cite{dat2026report} \\
 A5 & Considered wear parts & Brake pads/discs, tyres, wipers, 12\,V battery, spark plugs \\
-A6 & Service gross margin  & 45\,\% (published range 40--55\,\%; lower bound used as conservative estimate for mid-segment, non-premium dealers~\cite{mckinsey2025dealer,zdkzahlen2024}) \\
+A6 & Service gross margin  & 45\,\% (published range 40--55\,\%; set below the midpoint as a conservative estimate for mid-segment, non-premium dealers~\cite{mckinsey2025dealer,zdkzahlen2024}) \\
 A7 & Franchised share      & 47\,\%~\cite{dat2026report} \\
 \bottomrule
 \end{tabularx}
@@ -350,7 +350,7 @@ This construction keeps the estimate conservative and never approaches full capt
 The conversion rate ($k = 0.50$, A10) is a conservative estimate: proactive,
 personalised maintenance contact from the customer's own dealership is consistent
 with findings that proactive contact aids uptake and loyalty~\cite{challagalla_proactive_2009,gonzalez_service_2015},
-yet price competition from independent garages and customer inertia toward switching service providers prevent full conversion, making 0.50 a deliberate floor rather than a central estimate. The value of $k$ is not empirically measured in this context; calibrating it against real customer-behavior data is identified as a direct future-work priority (Section~\ref{sec:future}).
+yet price competition from independent garages and customer inertia toward switching service providers prevent full conversion, making 0.50 a deliberate floor rather than a central estimate. The value of $k$ is not empirically measured in this context; calibrating it against real customer-behaviour data is identified as a direct future-work priority (Section~\ref{sec:future}).
 
 \subsection{Potential Assessment}
 
@@ -371,10 +371,10 @@ V_{\mathrm{wear}} = \sum_{i}\,\lambda_i \cdot p_i \\
  
 \paragraph*{Step 2 --- Captured value}
 Applying the capture rates from Table~\ref{tab:mech}:
-\begin{align}
+\begin{align*}
 \text{Captured}_{\mathrm{cur}} &= \cIst  \cdot V_{\mathrm{wear}} = 0.40 \cdot 389 \approx \eur\,156~\text{/veh/yr,} \\
 \text{Captured}_{\mathrm{tgt}} &= \cSoll \cdot V_{\mathrm{wear}} = 0.70 \cdot 389 \approx \eur\,273~\text{/veh/yr.}
-\end{align}
+\end{align*}
 Applying the service gross margin (A6) gives the captured gross profit.
  
 \paragraph*{Step 3 --- KPIs}
@@ -442,7 +442,7 @@ data but are not fitted to an operational dataset, and no prototype was built;
 the contribution is a transparent model of the potential, not a measured
 outcome. The first-owner horizon (A3: 8~years) is an upper-bound lifecycle horizon; the
 DAT Report~2026 records a median holding period of 6.2~years~\cite{dat2026report},
-so fleet-lifetime totals are correspondingly optimistic. Second, the PdM forecast accuracy (A9, 90\,\%) is reported for transparency
+so fleet-lifetime totals are correspondingly optimistic. Second, the reported PdM forecast accuracy ($\approx$90\,\%, the empirical basis of A9) is stated for transparency
 but does not enter the capture-rate formula. Because a proactive service
 recommendation looks identical to the customer whether the underlying forecast
 is correct or slightly premature, both true-positive and false-positive
@@ -467,25 +467,25 @@ the dealership's PdM capability; the shift to BEVs will erode ICE-specific wear-
 
 \subsection{Interpretation of Results}
 
-The per-vehicle gross-profit uplift of \euro\,53 per year scales to \euro\,263k
-annually across a 5{,}000-vehicle fleet and compounds to approximately \euro\,2.1
+The per-vehicle gross-profit uplift of \eur\,53 per year scales to \eur\,263k
+annually across a 5{,}000-vehicle fleet and compounds to approximately \eur\,2.1
 million over the eight-year first-owner horizon (A3). The parts margin is,
 however, only the visible component of the value: each of the additional 1.1
 contact events per vehicle per year is simultaneously an advisory opportunity and
 a loyalty-reinforcing interaction, consistently linked to increased repurchase
 intent at the originating dealership~\cite{challagalla_proactive_2009,gonzalez_service_2015}.
 The sensitivity analysis confirms robustness: even at $\cSoll = 0.50$, the
-fleet-level gain remains approximately \euro\,90k per year---a positive business
+fleet-level gain remains approximately \eur\,90k per year---a positive business
 case under any plausible conversion scenario.
 
 \subsection{The Non-Technical Barrier}
 
 The DT/ML/OTA technology stack is commercially mature and not the binding
 constraint~\cite{lopes2025vehicledt,abougrad2026xai}. The real bottleneck is
-telemetry access: under the EU Data Act (applicable from 12~September 2025),
-in-vehicle data reaches the dealer only with the owner's explicit consent and on
-OEM-provisioned terms~\cite{eu2023dataact}, making the dealer dependent on two
-actors it does not control. The practical recommendation is therefore to build
+telemetry access: as outlined in Section~\ref{sec:lim}, in-vehicle data reaches
+the dealer only with the owner's consent and on OEM-provisioned
+terms~\cite{eu2023dataact}, making the dealer dependent on two actors it does
+not control. The practical recommendation is therefore to build
 consent infrastructure---opt-in flows integrated into the CRM, clear customer
 value propositions---as a prerequisite rather than an afterthought, independently
 of any specific DT deployment decision.
@@ -507,6 +507,13 @@ this parameter. A second priority is extending the framework to battery electric
 vehicles, where the high-voltage battery's state of health replaces spark plugs
 as the dominant prognostic target.
 
+Beyond the dealership's business case, DT-based PdM exemplifies the shift from
+merely smart to wise information systems: replacing parts on evidence rather
+than on fixed intervals avoids premature replacement and the associated material
+waste, the explicit assumption framework keeps the decision model transparent
+and contestable, and consent-based data access keeps the customer in control of
+the decision loop.
+
 
 % ============================================================
 \section{Conclusion \& Future Work}
@@ -523,8 +530,8 @@ fault-driven appointments with proactive, evidence-based service recommendations
 A quantitative potential assessment, anchored to published German market data,
 translated this shift into concrete KPIs: under a conservative conversion
 assumption ($k = 0.50$), the repair capture rate rises from 40\,\% to 70\,\%,
-increasing gross profit by approximately \euro\,53 per vehicle per year and
-\euro\,263k annually across a 5\,000-vehicle fleet. Customer touchpoints grow
+increasing gross profit by approximately \eur\,53 per vehicle per year and
+\eur\,263k annually across a 5{,}000-vehicle fleet. Customer touchpoints grow
 from 1.6 to roughly 2.7 per year, each an additional advisory and upselling
 opportunity. The sensitivity analysis confirmed the economic case is robust
 across the full plausible parameter range. The dominant adoption barrier is
@@ -541,7 +548,7 @@ beyond the parts margin alone.
 Three directions stand out for future research. First, the assumption framework
 should be validated against an operational DT deployment, replacing modelled
 KPIs with measured outcomes and calibrating the conversion rate $k$ under real
-customer-behavior conditions. Second, the data-access challenge warrants
+customer-behaviour conditions. Second, the data-access challenge warrants
 dedicated study: viable consent architectures and OEM-dealer data-sharing
 agreements under the EU Data Act need to be developed and their effect on
 customer opt-in quantified. Third, the framework should be extended to battery
