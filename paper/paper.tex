@@ -176,10 +176,10 @@ across a plausible parameter band~\cite{cooper_gap_2015}.
 
 \subsection{Current- and Target-State Lifecycle Comparison}\label{sec:lifecycle}
 
-\begin{figure}[htbp]
+\begin{figure}[t]
   \centering
   \includegraphics[width=1.0\columnwidth]{../pictures/Lifecycle Aftersales previous.png}
-  \caption{Aftersales lifecycle: current interval-based state }
+  \caption{Aftersales lifecycle: current interval-based state}
   \label{fig:lifecycle_previous}
 \end{figure}
 
@@ -189,29 +189,19 @@ Figure~\ref{fig:lifecycle_previous} illustrates the interval-based current state
 In the interval-based current state, the customer journey is driven by fixed
 manufacturer schedules and visible failure signals. The vehicle operates without
 continuous component-state monitoring; no wear forecast is computed during
-normal driving. The lifecycle is initiated by the customer rather than the
-dealership: it begins with the customer's contact to arrange the service
-appointment, and the subsequent steps remain largely in the customer's hands.
-The trigger is either a time- or mileage-triggered reminder or an acute fault
-such as a warning lamp. Both are late-stage: the mileage interval is set
-conservatively, so most vehicles still have substantial remaining part life,
-while the fault-driven trigger often arrives after the wear limit has already
-been exceeded~\cite{abougrad2026xai}. Most of these steps are controlled by
-the customer, while only a few are captured digitally, since no data basis on
-the vehicle's component state exists. Because no
-proactive outreach precedes the fault, the customer exercises free choice of
-workshop at the moment of highest urgency, and the majority of these unplanned
-repairs are captured by independent third-party garages~\cite{dat2026report}.
+normal driving. Consequently, most process steps are physical in nature and therefore cannot be represented in the digital lane. The lifecycle is initiated by the customer rather than the
+dealership: beginning with the appointment request, the subsequent process remains largely customer-driven.
+Service is triggered either by a time- or mileage-based reminder or by an acute fault, such as a warning lamp. Both represent late-stage maintenance triggers: maintenance intervals are set conservatively, leaving many components with substantial RUL, whereas fault-based triggers often occur only after wear limits have already been exceeded~\cite{abougrad2026xai}. 
+Most process steps are controlled by the customer and only sparsely supported by digital information because no data on the actual condition of vehicle components are available. As no proactive outreach precedes a fault, customers retain complete freedom to choose a repair provider at the moment of highest urgency, causing many unplanned repairs to be captured by independent third-party workshops~\cite{dat2026report}.
 This leakage intensifies with vehicle age---franchised-dealer share drops from
 86\,\% for vehicles under three years old to just 39\,\% for those over six
-years~\cite{dat2026report}---and with cost-driven customer behaviour: 43\,\% of
-German vehicle owners now perform only the minimum maintenance~\cite{dat2026report}.
+years~\cite{dat2026report}---and is further reinforced by cost-driven customer behavior, with 43\,\% of German vehicle owners performing only the minimum required maintenance~\cite{dat2026report}.
 The dealership's contact with the customer is therefore reduced to the
-statutory inspection cycle, limiting both retention and upselling opportunity.
-Moreover, most of these steps are physical in nature and, in the absence of a
-data source capturing them, cannot be represented in the digital lane.
+statutory inspection cycle, limiting both retention and upselling opportunities.
 
-\begin{figure}[H]
+
+
+\begin{figure}[t]
   \centering
   \includegraphics[width=1.0\columnwidth]{../pictures/Lifecycle Aftersales future.png}
   \caption{Aftersales lifecycle: DT/PdM-enabled target state}
@@ -219,33 +209,8 @@ data source capturing them, cannot be represented in the digital lane.
 \end{figure}
 
 \paragraph{Target state}
-The DT is the core enabler of this digital process layer. It allows
-the customer to be involved only to the extent necessary, raising the customer
-experience compared to the current state. The lifecycle is now initiated and
-steered by the PdM forecast rather than by the customer. Not only the
-required documents but also the processes themselves become digitally
-traceable, and the resulting data can additionally be analysed for upselling,
-increasing service revenue. Nevertheless, some processes, such as the physical
-inspection, cannot be digitalised by DT and PdM.
-In the DT/PdM-enabled target state, the vehicle's digital twin continuously
-aggregates sensor streams, OBD signals, operating parameters, and
-environmental conditions via OTA telemetry to maintain an
-up-to-date virtual representation of each monitored
-component~\cite{lopes2025vehicledt}. Machine-learning models operating on this
-virtual representation compute remaining-useful-life estimates for wear parts
-such as brake pads and discs, tyres, and ignition
-components~\cite{kumar2025suspension,karthick2025simulating}. When the forecast
-horizon falls below a configurable threshold, the system generates a proactive
-service recommendation communicated to the customer through the OEM's
-connected-car interface or the dealership's CRM before any visible fault has
-occurred~\cite{challagalla_proactive_2009,gonzalez-pridaDigitalTransformationAftersales2025}.
-The appointment is scheduled at the customer's convenience, the required parts
-are pre-ordered, and the workshop interaction is transformed from an unplanned,
-fault-driven event into a planned, evidence-based service visit. Post-service,
-the digital twin resets the component baseline and resumes monitoring, closing
-the lifecycle loop. The dealership thereby intercepts wear-part replacements
-that would otherwise be lost to the independent aftermarket and gains structured
-contact points along the customer journey that the current state does not provide.
+The DT forms the core enabler of the digital process layer. It limits direct customer involvement to the necessary interactions, thereby improving the service experience compared to the current state. The lifecycle is initiated and steered by PdM forecasts rather than customer-triggered actions. Service requests, documentation, and process steps become digitally traceable, enabling additional data-driven analysis for upselling and service revenue optimization. Nevertheless, certain physical activities, such as vehicle inspection, remain outside the scope of full digitalization.
+In the DT/PdM-enabled target state, the vehicle’s digital twin continuously aggregates sensor streams, OBD signals, operating parameters, and environmental conditions via OTA telemetry to maintain an up-to-date virtual representation of each monitored component~\cite{lopes2025vehicledt}. ML models operating on this representation compute RUL for wear parts such as brake pads, discs, tyres, and ignition components~\cite{kumar2025suspension,karthick2025simulating}. When the forecast horizon falls below a predefined threshold, the system generates a proactive service recommendation communicated via the OEM’s connected-car interface or the dealership’s CRM before any visible fault occurs~\cite{challagalla_proactive_2009,gonzalez-pridaDigitalTransformationAftersales2025}. The appointment is scheduled at the customer’s convenience, required parts are pre-ordered, and the workshop visit is transformed from an unplanned, fault-driven event into a planned, data-driven service interaction. After service completion, the digital twin resets the component baseline and resumes monitoring, thereby closing the lifecycle loop. The dealership thus captures wear-part replacements that would otherwise be lost to the independent aftermarket and gains structured touchpoints along the customer journey that are absent in the current state.
 
 \subsection{Assumption Framework}
 
@@ -453,7 +418,7 @@ but the model outcome does not depend on reaching any particular accuracy thresh
 consequential for practice, the target state presumes the dealership can actually
 obtain the vehicle's telemetry. Under the EU Data Act (applicable from
 12~September~2025) the user is the vehicle owner or driver, who may authorise a
-third party such as the dealership to receive in-vehicle data on fair,
+third-party such as the dealership to receive in-vehicle data on fair,
 reasonable and non-discriminatory terms, while the OEM remains the data holder;
 where the data is personal, the GDPR additionally requires a lawful basis~\cite{eu2023dataact}.
 Access is thus contingent on customer consent, OEM provisioning in a usable
