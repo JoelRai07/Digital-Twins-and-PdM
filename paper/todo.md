@@ -8,11 +8,9 @@ Das ist oft ein stiller Abzugsgrund. Wenn die Lifecycle-Grafik pixelig oder unei
 
 4. Review und Bewertung mit KI
 
-5. Methodik prüfen - Gap Analyse richtig eingehalten?
+5. Literaturverzeichnis prüfen!
 
-6. Literaturverzeichnis prüfen!
-
-7. Paper kürzen 
+6. Paper kürzen 
 
 Parallel Poster machen
  
