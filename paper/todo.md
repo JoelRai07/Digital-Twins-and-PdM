@@ -13,4 +13,3 @@ Das ist oft ein stiller Abzugsgrund. Wenn die Lifecycle-Grafik pixelig oder unei
 6. Paper kürzen 
 
 Parallel Poster machen
- 
