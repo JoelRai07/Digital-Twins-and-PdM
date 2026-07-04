@@ -12,4 +12,8 @@ Das ist oft ein stiller Abzugsgrund. Wenn die Lifecycle-Grafik pixelig oder unei
 
 6. Paper kürzen 
 
+7. BE --> AE
+
+8. Restliche Fehler: Syntaktisch, Semantisch und so prüfen 
+
 Parallel Poster machen
