@@ -76,7 +76,7 @@ Today's vehicles are connected by default and continuously transmit operational
 data \cite{lopes2025vehicledt,coppola2016connected}, so the information required
 to assess their technical condition is largely available. Nevertheless, automotive aftersales remains reactive: even well-connected vehicles are serviced on fixed time or mileage
 intervals rather than on the actual condition of their components \cite{national_transport_university_overview_2023}.
-Wear parts---brake pads and discs, tyres, ignition components, or wipers---are typically replaced only after wear or failure, leading to unplanned repairs frequently carried out by independent third-party workshops \cite{alexander_secret_2002}. For the
+Wear parts---brake pads and discs, tires, ignition components, or wipers---are typically replaced only after wear or failure, leading to unplanned repairs frequently carried out by independent third-party workshops \cite{alexander_secret_2002}. For the
 dealership, which owns the customer relationship, this means losing
 repair revenue and valuable interactions, reducing opportunities for
 customer advice, retention, and upselling \cite{challagalla_proactive_2009,sabbagha_impact_2016}.
@@ -100,7 +100,7 @@ the study (i)~clarifies the interplay of DT and PdM in aftersales, (ii)~compares
 
 \subsection{Digital Twins}
 
-The concept of the digital twin was formalised by Grieves~\cite{grieves2014} in a white paper on manufacturing excellence, where it described a virtual replica of a physical product maintained in synchrony with its real-world counterpart throughout the entire asset lifecycle. Since then, the concept has expanded into aerospace, energy, and automotive domains~\cite{wang2023review,wise_go_2000}.
+The concept of the digital twin was formalized by Grieves~\cite{grieves2014} in a white paper on manufacturing excellence, where it described a virtual replica of a physical product maintained in synchrony with its real-world counterpart throughout the entire asset lifecycle. Since then, the concept has expanded into aerospace, energy, and automotive domains~\cite{wang2023review,wise_go_2000}.
 
 In the automotive domain, this general architecture maps directly onto the connected vehicle. The physical entity is the vehicle itself, equipped with on-board sensors and an On-Board Diagnostic (OBD) interface. Its virtual representation is a cloud-hosted model mirroring component states, degradation histories, and operating conditions. The synchronizing link is the over-the-air (OTA) telematics connection, which transmits telemetry data to the cloud and returns configuration updates to the vehicle~\cite{lopes2025vehicledt,coppola2016connected,zhang2009connected}. Together, this setup transforms the vehicle from a periodically inspected asset into a continuously monitored system---a shift first documented for automotive applications by Zhang et al.~\cite{zhang2009connected}.
 
@@ -125,9 +125,9 @@ Vehicle maintenance strategies form a maturity hierarchy: reactive maintenance r
 
 At this scale, PdM is not a stand-alone technique but a service layer built on a DT of the vehicle. As described by Lopes et al.~\cite{lopes2025vehicledt} and El Hadraoui et al.~\cite{aichi2024multilayered}, the DT provides the synchronized virtual representation against which sensor streams are interpreted, anomalies detected, and RUL estimates computed. In current automotive DT architectures, predictive analytics is therefore typically positioned as a dedicated microservice within the DT's analytics core \cite{lopes2025vehicledt,karthick2025simulating}.
 
-\subsection{Machine Learning in PdM}
+\subsection{Machine Learning in Predictive Maintenance}
 
-Three main problem classes structure ML-based PdM. Classification assigns sensor patterns to discrete fault categories using Support Vector Machines, Random Forests, or Convolutional Neural Networks on time-frequency representations of vibration signals \cite{kumar2025suspension,abougrad2026xai}. Regression targets RUL estimation, dominated by Long Short-Term Memory (LSTM) networks for their ability to model long-range temporal dependencies in degradation signals \cite{karthick2025simulating,abougrad2026xai}. Anomaly detection operates without explicit labels, learning nominal behaviour and flagging deviations as failure precursors \cite{karthick2025simulating,abougrad2026xai}. AbouGrad et al. report classification accuracies of approximately 89\% for vibration-based fault detection and 92\% for LSTM-based RUL estimation in automotive contexts, though they note that these figures depend strongly on dataset quality and operating conditions~\cite{abougrad2026xai}. In the aftersales context, RUL regression is the primary mechanism behind proactive service recommendations, whereas anomaly detection serves as an early-warning layer for components without established wear curves.
+Three main problem classes structure ML-based PdM. Classification assigns sensor patterns to discrete fault categories using Support Vector Machines, Random Forests, or Convolutional Neural Networks on time-frequency representations of vibration signals \cite{kumar2025suspension,abougrad2026xai}. Regression targets RUL estimation, dominated by Long Short-Term Memory (LSTM) networks for their ability to model long-range temporal dependencies in degradation signals \cite{karthick2025simulating,abougrad2026xai}. Anomaly detection operates without explicit labels, learning nominal behavior and flagging deviations as failure precursors \cite{karthick2025simulating,abougrad2026xai}. AbouGrad et al. report classification accuracies of approximately 89\% for vibration-based fault detection and 92\% for LSTM-based RUL estimation in automotive contexts, though they note that these figures depend strongly on dataset quality and operating conditions~\cite{abougrad2026xai}. In the aftersales context, RUL regression is the primary mechanism behind proactive service recommendations, whereas anomaly detection serves as an early-warning layer for components without established wear curves.
 
 \subsection{Automotive Aftersales}
 
@@ -162,7 +162,7 @@ The analysis proceeds in two stages. First, a lifecycle comparison
 a DT/PdM-enabled target state along the customer journey, identifying the
 structural points at which reactive servicing causes value leakage. Second, a
 quantitative potential assessment translates the identified gap into economic
-KPIs. A single economic lever---the repair capture rate $c$, defined as the share of
+key performance indicators (KPIs). A single economic lever---the repair capture rate $c$, defined as the share of
 addressable wear-part work retained at the franchised dealership---is used to
 quantify the gap; its target value is derived analytically from the mechanism
 assumptions rather than assumed directly, ensuring internal consistency. Finally, a
@@ -213,9 +213,9 @@ statutory inspection cycle, limiting both retention and upselling opportunities.
 \paragraph{Target state}
 The DT forms the core enabler of the digital process layer. It limits direct customer involvement to the necessary interactions, thereby improving the service experience compared to the current state. The lifecycle is initiated and steered by PdM forecasts rather than customer-triggered actions. Service requests, documentation, and process steps become digitally traceable, enabling additional data-driven analysis for upselling and service revenue optimization. Nevertheless, certain physical activities, such as vehicle inspection, remain outside the scope of full digitalization.
 
-In the DT/PdM-enabled target state, the vehicle’s digital twin continuously aggregates sensor streams, OBD signals, operating parameters, and environmental conditions via OTA telemetry to maintain an up-to-date virtual representation of each monitored component~\cite{lopes2025vehicledt}. ML models operating on this representation compute RUL for wear parts such as brake pads, discs, tyres, and ignition components~\cite{kumar2025suspension,karthick2025simulating}. When the forecast horizon falls below a predefined threshold, the system generates a proactive service recommendation communicated via the OEM’s connected-car interface or the dealership’s CRM before any visible fault occurs~\cite{challagalla_proactive_2009,gonzalez-pridaDigitalTransformationAftersales2025}. 
+In the DT/PdM-enabled target state, the vehicle’s DT continuously aggregates sensor streams, OBD signals, operating parameters, and environmental conditions via OTA telemetry to maintain an up-to-date virtual representation of each monitored component~\cite{lopes2025vehicledt}. ML models operating on this representation compute RUL for wear parts such as brake pads, discs, tires, and ignition components~\cite{kumar2025suspension,karthick2025simulating}. When the forecast horizon falls below a predefined threshold, the system generates a proactive service recommendation communicated via the OEM’s connected-car interface or the dealership’s customer relationship management (CRM) system before any visible fault occurs~\cite{challagalla_proactive_2009,gonzalez-pridaDigitalTransformationAftersales2025}. 
 
-The appointment is scheduled at the customer’s convenience, required parts are pre-ordered, and the workshop visit is transformed from an unplanned, fault-driven event into a planned, data-driven service interaction. After service completion, the digital twin resets the component baseline and resumes monitoring, thereby closing the lifecycle loop. The dealership thus captures wear-part replacements that would otherwise be lost to the independent aftermarket and gains structured touchpoints along the customer journey that are absent in the current state.
+The appointment is scheduled at the customer’s convenience, required parts are pre-ordered, and the workshop visit is transformed from an unplanned, fault-driven event into a planned, data-driven service interaction. After service completion, the DT resets the component baseline and resumes monitoring, thereby closing the lifecycle loop. The dealership thus captures wear-part replacements that would otherwise be lost to the independent aftermarket and gains structured touchpoints along the customer journey that are absent in the current state.
 
 \subsection{Assumption Framework}
 
@@ -237,11 +237,11 @@ anchored to a published figure where one exists and flagged as a set value other
 \toprule
 \textbf{ID} & \textbf{Assumption} & \textbf{Value} \\
 \midrule
-A1 & Reference vehicle     & Mid-segment ICE passenger car, German market \\
+A1 & Reference vehicle     & Mid-segment internal combustion engine (ICE) passenger car, German market \\
 A2 & Annual mileage        & 13{,}140 km/yr~\cite{dat2026report} \\
 A3 & First-owner horizon   & 8 years~\cite{mckinsey2025dealer} \\
 A4 & Workshop visits       & 1.6/yr~\cite{dat2026report} \\
-A5 & Considered wear parts & Brake pads/discs, tyres, wipers, 12\,V battery, spark plugs \\
+A5 & Considered wear parts & Brake pads/discs, tires, wipers, 12\,V battery, spark plugs \\
 A6 & Service gross margin  & 45\,\% (published range 40--55\,\%; set below the midpoint as a conservative estimate for mid-segment, non-premium dealers~\cite{mckinsey2025dealer,zdkzahlen2024}) \\
 A7 & Franchised share      & 47\,\%~\cite{dat2026report} \\
 \bottomrule
@@ -274,7 +274,7 @@ brackets the residual uncertainty from this simplification.
 \midrule
 Brake pads (per axle)      & 40{,}000 km  & 0.33 & \eur\,250 \\
 Brake discs (+pads, front) & 120{,}000 km & 0.11 & \eur\,450 \\
-Tyres (set of 4)           & 45{,}000 km  & 0.29 & \eur\,600 \\
+Tires (set of 4)           & 45{,}000 km  & 0.29 & \eur\,600 \\
 Wiper blades (pair)        & 1 year       & 1.00 & \eur\,25  \\
 12\,V battery (fitted)     & 6 years      & 0.17 & \eur\,150 \\
 Spark plugs (set)          & 60{,}000 km  & 0.22 & \eur\,150 \\
@@ -356,7 +356,7 @@ Applying the capture rates from Table~\ref{tab:mech}:
 Applying the service gross margin (A6) gives the captured gross profit.
  
 \paragraph*{Step 3 --- KPIs}
-Table~\ref{tab:kpi} summarises the comparison. Revenue and gross-profit figures
+Table~\ref{tab:kpi} summarizes the comparison. Revenue and gross-profit figures
 are per vehicle per year; the fleet column scales the gross-profit delta
 linearly to a representative franchised group of 5{,}000 active customer
 vehicles.
@@ -373,7 +373,7 @@ vehicles.
 Repair capture rate              & 40\,\%     & 70\,\%      & +30\,pp \\
 Wear-part revenue (/veh/yr)      & \eur\,156  & \eur\,273   & +\eur\,117 \\
 Gross profit (/veh/yr)           & \eur\,70   & \eur\,123   & +\eur\,53 \\
-Fleet GP, 5{,}000 veh (/yr)      & \eur\,351k & \eur\,613k  & +\eur\,263k \\
+Fleet gross profit, 5{,}000 veh (/yr) & \eur\,351k & \eur\,613k  & +\eur\,263k \\
 Customer touchpoints (/yr)       & 1.6        & $\sim$2.7   & +1.1 \\
 First-pass inspection rate       & baseline   & improved    & qual. \\
 Lifecycle retention~\cite{mckinsey2025dealer} & $\sim$25\,\% & sustained & qual. \\
@@ -556,6 +556,7 @@ auf künstlicher Intelligenz (KI) basierten Systeme benutzt:
  
 \begin{enumerate}
   \item Claude (Anthropic)
+  \item ChatGPT (OpenAI)
 \end{enumerate}
  
 Wir erklären, dass wir
@@ -585,7 +586,7 @@ Formatierung und Satz & Claude (Anthropic) & Umwandlung von Fließtext in \LaTeX
 \hline
 Verifikation der Berechnungen & Claude (Anthropic) & Prüfung der Zwischenrechnungen ($V_{\mathrm{wear}}$, Capture-Raten) auf Konsistenz \\[4ex]
 \hline
-Sprachliche Überarbeitung & Claude (Anthropic) & Korrektur von Grammatik und Stil einzelner Abschnitte \\[4ex]
+Sprachliche Überarbeitung & Claude (Anthropic), ChatGPT (OpenAI) & Korrektur von Grammatik und Stil einzelner Abschnitte \\[4ex]
 \hline
 \end{tabular}
  
