@@ -60,7 +60,7 @@
 %        wichtigste Ergebnisse und Fazit (~150-250 Woerter)
 % ============================================================
 \begin{abstract}
-This paper investigates the effect of digital-twin-based predictive maintenance on the automotive aftersales domain, focusing on the German passenger-car market. A model-based gap analysis is conducted to compare the interval-based current state against a digital-twin-enabled target state along the full customer journey. Based on this comparison, the business potential is quantified using a transparent assumption framework anchored in published German market data. The results show that proactive, data-driven service recommendations raise the repair capture rate from 40 to 70 percent, increasing wear-part gross profit by approximately 53 EUR per vehicle per year and 263,000 EUR annually across a 5,000-vehicle fleet. Customer touchpoints grow from 1.6 to roughly 2.7 per year, each representing an additional advisory and upselling opportunity. The analysis further identifies data access under the EU Data Act, rather than technology maturity, as the dominant adoption barrier. The findings establish a transparent, contestable model of the potential that dealerships and OEMs can use to evaluate and plan the integration of digital-twin-based predictive maintenance into their aftersales operations.
+This paper investigates the effect of digital-twin-based predictive maintenance on the automotive aftersales domain, focusing on the German passenger-car market. A model-based gap analysis is conducted to compare the interval-based current state against a digital-twin-enabled target state along the full customer journey. Based on this comparison, the business potential is quantified using a transparent assumption framework anchored in published German market data. The results show that proactive, data-driven service recommendations raise the repair capture rate from 40 to 70 percent, increasing wear-part gross profit by approximately 53 EUR per vehicle per year and 263,000 EUR annually across a 5,000-vehicle fleet. Customer touchpoints grow from 1.6 to roughly 2.7 per year, each representing an additional advisory and upselling opportunity. The analysis further identifies data access, rather than technology maturity, as the dominant adoption barrier. Together, these results establish a transparent, contestable model of the potential that dealerships and original equipment manufacturers can use to evaluate and plan the integration of digital-twin-based predictive maintenance into their aftersales operations.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -406,30 +406,28 @@ assumptions rather than an artifact of any single optimistic value.
 \subsection{Limitations}\label{sec:lim}
 
 The analysis is intentionally assumption-driven and carries corresponding
-limitations. First, the figures are illustrative: $V_{\mathrm{wear}}$, the capture
-rates and the conversion factor are anchored to published market and accuracy
-data but are not fitted to an operational dataset, and no prototype was built;
-the contribution is a transparent model of the potential, not a measured
-outcome. The first-owner horizon (A3: 8~years) is an upper-bound lifecycle horizon; the
-DAT Report~2026 records a median holding period of 6.2~years~\cite{dat2026report},
-so fleet-lifetime totals are correspondingly optimistic. Second, the reported PdM forecast accuracy ($\approx$90\,\%, the empirical basis of A9) is stated for transparency
-but does not enter the capture-rate formula. Because a proactive service
-recommendation looks identical to the customer whether the underlying forecast
-is correct or slightly premature, both true-positive and false-positive
-predictions generate the same type of offer, accepted or declined at rate $k$.
-Accuracy will improve continuously as in-service data accumulates~\cite{abougrad2026xai},
-but the model outcome does not depend on reaching any particular accuracy threshold. A related long-run risk is trust erosion: if the system persistently recommends replacements the customer later judges premature, the effective conversion rate $k$ will fall below the modelled floor over repeated interactions; the sensitivity analysis brackets this effect indirectly through the lower-$\cSoll$ scenarios. Third, and most
-consequential for practice, the target state presumes the dealership can actually
-obtain the vehicle's telemetry. Under the EU Data Act (applicable from
-12~September~2025) the user is the vehicle owner or driver, who may authorise a
-third-party such as the dealership to receive in-vehicle data on fair,
-reasonable and non-discriminatory terms, while the OEM remains the data holder;
-where the data is personal, the GDPR additionally requires a lawful basis~\cite{eu2023dataact}.
-Access is thus contingent on customer consent, OEM provisioning in a usable
-format, and business-to-business (B2B) compensation --- a non-technical adoption barrier that the model
-does not price in. Finally, two scope caveats apply: tyres, though included as a
-wear part, are often served by specialist channels and may leak independently of
-the dealership's PdM capability; the shift to BEVs will erode ICE-specific wear-part volume and shift the addressable basket toward brakes, tyres, and the high-voltage battery.
+limitations. First, the figures are illustrative: $V_{\mathrm{wear}}$, the
+capture rates, and the conversion factor are anchored to published market and
+accuracy data but are not fitted to an operational dataset. The contribution is therefore a transparent model of the
+potential, not a measured outcome. Similarly, the first-owner horizon (A3: 8~years) is an
+upper-bound lifecycle horizon; the DAT Report~2026 records a median holding
+period of 6.2~years~\cite{dat2026report}, so fleet-lifetime totals are
+correspondingly optimistic. 
+Second, the reported PdM forecast accuracy ($\approx$90\,\%, the empirical
+basis of A9) is stated for transparency but does not enter the capture-rate
+formula. A proactive service recommendation looks identical to the customer
+regardless of whether the underlying forecast is correct or slightly
+premature. Both true-positive and false-positive predictions therefore
+generate the same type of offer, accepted or declined at rate $k$. Accuracy
+will improve as in-service data accumulates~\cite{abougrad2026xai},
+but the model outcome does not depend on reaching any particular accuracy
+threshold. Third, and most consequential for practice, the target state presumes the
+dealership can actually obtain the vehicle's telemetry. The vehicle owner or
+driver must authorize a third party such as the dealership to receive
+in-vehicle data, while the OEM remains responsible for providing that data in
+a usable format. Access is thus contingent on customer consent, OEM provisioning, and
+business-to-business compensation---a non-technical adoption barrier that
+the model does not price in.
 \FloatBarrier
 % ============================================================
 \section{Discussion and Recommendations}
