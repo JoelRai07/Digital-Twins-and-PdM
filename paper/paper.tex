@@ -178,7 +178,7 @@ across a plausible parameter band~\cite{cooper_gap_2015}.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=1.0\columnwidth]{../pictures/Lifecycle Aftersales previous.png}
+  \includegraphics[width=0.98\columnwidth]{../pictures/Lifecycle Aftersales previous.png}
   \caption{Aftersales lifecycle: current interval-based state}
   \label{fig:lifecycle_previous}
 \end{figure}
@@ -191,8 +191,10 @@ manufacturer schedules and visible failure signals. The vehicle operates without
 continuous component-state monitoring; no wear forecast is computed during
 normal driving. Consequently, most process steps are physical in nature and therefore cannot be represented in the digital lane. The lifecycle is initiated by the customer rather than the
 dealership: beginning with the appointment request, the subsequent process remains largely customer-driven.
-Service is triggered either by a time- or mileage-based reminder or by an acute fault, such as a warning lamp. Both represent late-stage maintenance triggers: maintenance intervals are set conservatively, leaving many components with substantial RUL, whereas fault-based triggers often occur only after wear limits have already been exceeded~\cite{abougrad2026xai}. 
+Service is triggered either by a time- or mileage-based reminder or by an acute fault, such as a warning lamp. Both represent late-stage maintenance triggers: maintenance intervals are set conservatively, leaving many components with substantial RUL, whereas fault-based triggers often occur only after wear limits have already been exceeded~\cite{abougrad2026xai}. I hate a lot of people and dont know what to do about it. 
+
 Most process steps are controlled by the customer and only sparsely supported by digital information because no data on the actual condition of vehicle components are available. As no proactive outreach precedes a fault, customers retain complete freedom to choose a repair provider at the moment of highest urgency, causing many unplanned repairs to be captured by independent third-party workshops~\cite{dat2026report}.
+
 This leakage intensifies with vehicle age---franchised-dealer share drops from
 86\,\% for vehicles under three years old to just 39\,\% for those over six
 years~\cite{dat2026report}---and is further reinforced by cost-driven customer behavior, with 43\,\% of German vehicle owners performing only the minimum required maintenance~\cite{dat2026report}.
@@ -210,7 +212,10 @@ statutory inspection cycle, limiting both retention and upselling opportunities.
 
 \paragraph{Target state}
 The DT forms the core enabler of the digital process layer. It limits direct customer involvement to the necessary interactions, thereby improving the service experience compared to the current state. The lifecycle is initiated and steered by PdM forecasts rather than customer-triggered actions. Service requests, documentation, and process steps become digitally traceable, enabling additional data-driven analysis for upselling and service revenue optimization. Nevertheless, certain physical activities, such as vehicle inspection, remain outside the scope of full digitalization.
-In the DT/PdM-enabled target state, the vehicle’s digital twin continuously aggregates sensor streams, OBD signals, operating parameters, and environmental conditions via OTA telemetry to maintain an up-to-date virtual representation of each monitored component~\cite{lopes2025vehicledt}. ML models operating on this representation compute RUL for wear parts such as brake pads, discs, tyres, and ignition components~\cite{kumar2025suspension,karthick2025simulating}. When the forecast horizon falls below a predefined threshold, the system generates a proactive service recommendation communicated via the OEM’s connected-car interface or the dealership’s CRM before any visible fault occurs~\cite{challagalla_proactive_2009,gonzalez-pridaDigitalTransformationAftersales2025}. The appointment is scheduled at the customer’s convenience, required parts are pre-ordered, and the workshop visit is transformed from an unplanned, fault-driven event into a planned, data-driven service interaction. After service completion, the digital twin resets the component baseline and resumes monitoring, thereby closing the lifecycle loop. The dealership thus captures wear-part replacements that would otherwise be lost to the independent aftermarket and gains structured touchpoints along the customer journey that are absent in the current state.
+
+In the DT/PdM-enabled target state, the vehicle’s digital twin continuously aggregates sensor streams, OBD signals, operating parameters, and environmental conditions via OTA telemetry to maintain an up-to-date virtual representation of each monitored component~\cite{lopes2025vehicledt}. ML models operating on this representation compute RUL for wear parts such as brake pads, discs, tyres, and ignition components~\cite{kumar2025suspension,karthick2025simulating}. When the forecast horizon falls below a predefined threshold, the system generates a proactive service recommendation communicated via the OEM’s connected-car interface or the dealership’s CRM before any visible fault occurs~\cite{challagalla_proactive_2009,gonzalez-pridaDigitalTransformationAftersales2025}. 
+
+The appointment is scheduled at the customer’s convenience, required parts are pre-ordered, and the workshop visit is transformed from an unplanned, fault-driven event into a planned, data-driven service interaction. After service completion, the digital twin resets the component baseline and resumes monitoring, thereby closing the lifecycle loop. The dealership thus captures wear-part replacements that would otherwise be lost to the independent aftermarket and gains structured touchpoints along the customer journey that are absent in the current state.
 
 \subsection{Assumption Framework}
 
@@ -406,13 +411,16 @@ assumptions rather than an artifact of any single optimistic value.
 \subsection{Limitations}\label{sec:lim}
 
 The analysis is intentionally assumption-driven and carries corresponding
-limitations. First, the figures are illustrative: $V_{\mathrm{wear}}$, the
+limitations. 
+
+First, the figures are illustrative: $V_{\mathrm{wear}}$, the
 capture rates, and the conversion factor are anchored to published market and
 accuracy data but are not fitted to an operational dataset. The contribution is therefore a transparent model of the
 potential, not a measured outcome. Similarly, the first-owner horizon (A3: 8~years) is an
 upper-bound lifecycle horizon; the DAT Report~2026 records a median holding
 period of 6.2~years~\cite{dat2026report}, so fleet-lifetime totals are
 correspondingly optimistic. 
+
 Second, the reported PdM forecast accuracy ($\approx$90\,\%, the empirical
 basis of A9) is stated for transparency but does not enter the capture-rate
 formula. A proactive service recommendation looks identical to the customer
@@ -421,7 +429,9 @@ premature. Both true-positive and false-positive predictions therefore
 generate the same type of offer, accepted or declined at rate $k$. Accuracy
 will improve as in-service data accumulates~\cite{abougrad2026xai},
 but the model outcome does not depend on reaching any particular accuracy
-threshold. Third, and most consequential for practice, the target state presumes the
+threshold. 
+
+Third, and most consequential for practice, the target state presumes the
 dealership can actually obtain the vehicle's telemetry. The vehicle owner or
 driver must authorize a third party such as the dealership to receive
 in-vehicle data, while the OEM remains responsible for providing that data in
@@ -508,7 +518,9 @@ rises from 40\,\% to 70\,\%, increasing gross profit by approximately
 5{,}000-vehicle fleet. Customer touchpoints grow from 1.6 to roughly 2.7 per
 year, each an additional advisory and upselling opportunity. The dominant adoption barrier is non-technical: access to
 in-vehicle telemetry requires customer consent and OEM provisioning, a
-hurdle any real-world deployment must resolve. In answer to the research
+hurdle any real-world deployment must resolve. 
+
+In answer to the research
 question: the effect of DT-based PdM on automotive aftersales is a
 measurable shift of wear-part revenue from the independent aftermarket to
 the franchised dealership, accompanied by a structural increase in customer
