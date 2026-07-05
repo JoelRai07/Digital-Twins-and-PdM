@@ -128,7 +128,7 @@ In this architecture, PdM is not a stand-alone technique but a service layer bui
 
 \subsection{Machine Learning in Predictive Maintenance}
 
-Three main problem classes structure ML-based PdM. Classification assigns sensor patterns to discrete fault categories using Support Vector Machines, Random Forests, or Convolutional Neural Networks on time-frequency representations of vibration signals \cite{kumar2025suspension,abougrad2026xai}. Regression targets RUL estimation, dominated by Long Short-Term Memory (LSTM) networks for their ability to model long-range temporal dependencies in degradation signals \cite{karthick2025simulating,abougrad2026xai}. Anomaly detection operates without explicit labels, learning nominal behavior and flagging deviations as failure precursors \cite{karthick2025simulating,abougrad2026xai}. AbouGrad et al. report classification accuracies of approximately 89\% for vibration-based fault detection and 92\% for LSTM-based RUL estimation in automotive contexts, though they note that these figures depend strongly on dataset quality and operating conditions~\cite{abougrad2026xai}. In the aftersales context, RUL regression is the primary mechanism behind proactive service recommendations, whereas anomaly detection serves as an early-warning layer for components without established wear curves.
+Three main problem classes structure ML-based PdM. Classification assigns sensor patterns to discrete fault categories using Support Vector Machines, Random Forests, or Convolutional Neural Networks (CNNs) on time-frequency representations of vibration signals \cite{kumar2025suspension,abougrad2026xai}. Regression targets RUL estimation, dominated by Long Short-Term Memory (LSTM) networks for their ability to model long-range temporal dependencies in degradation signals \cite{karthick2025simulating,abougrad2026xai}. Anomaly detection operates without explicit labels, learning nominal behavior and flagging deviations as failure precursors \cite{karthick2025simulating,abougrad2026xai}. AbouGrad et al. report classification accuracies of approximately 89\% for vibration-based fault detection and 92\% for LSTM-based RUL estimation in automotive contexts, though they note that these figures depend strongly on dataset quality and operating conditions~\cite{abougrad2026xai}. In the aftersales context, RUL regression is the primary mechanism behind proactive service recommendations, whereas anomaly detection serves as an early-warning layer for components without established wear curves.
 
 \subsection{Automotive Aftersales}
 
@@ -179,13 +179,14 @@ across a plausible parameter band~\cite{cooper_gap_2015}.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.98\columnwidth]{../pictures/Lifecycle Aftersales previous.png}
+  \includegraphics[width=0.94\columnwidth]{../pictures/Lifecycle Aftersales previous.png}
   \caption{Aftersales lifecycle: current interval-based state}
   \label{fig:lifecycle_previous}
 \end{figure}
 
-Figure~\ref{fig:lifecycle_previous} illustrates the interval-based current state along the customer journey from vehicle operation through service execution to post-repair follow-up, identifying the responsible actor at each stage and where reactive servicing causes value leakage. The processes are separated into a physical and a digital lane, making the extent of digital involvement directly comparable across the lifecycle. The corresponding DT/PdM-enabled target state is presented separately in Figure~\ref{fig:lifecycle_future}.
+Figure~\ref{fig:lifecycle_previous} illustrates the interval-based current state along the customer journey, identifying the responsible actor at each stage and where reactive servicing causes value leakage; Figure~\ref{fig:lifecycle_future} presents the corresponding DT/PdM-enabled target state. Both separate the processes into a physical and a digital lane, making the extent of digital involvement directly comparable.
 
+\newpage
 \paragraph{Current state}
 In the interval-based current state, the customer journey is driven by fixed
 manufacturer schedules and visible failure signals. The vehicle operates without
@@ -201,12 +202,13 @@ This leakage intensifies with vehicle age---franchised-dealer share drops from
 years~\cite{dat2026report}---and is further reinforced by cost-driven customer behavior, with 43\,\% of German vehicle owners performing only the minimum required maintenance~\cite{dat2026report}.
 The dealership's contact with the customer is therefore reduced to the
 statutory inspection cycle, limiting both retention and upselling opportunities.
+\newpage
 
 
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=1.0\columnwidth]{../pictures/Lifecycle Aftersales future.png}
+  \includegraphics[width=0.94\columnwidth]{../pictures/Lifecycle Aftersales future.png}
   \caption{Aftersales lifecycle: DT/PdM-enabled target state}
   \label{fig:lifecycle_future}
 \end{figure}
