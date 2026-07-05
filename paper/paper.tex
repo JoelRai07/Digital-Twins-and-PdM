@@ -13,6 +13,7 @@
 \usepackage{booktabs}
 \usepackage{eurosym}
 \usepackage{placeins}
+\usepackage{balance}
 
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}
 \newcommand{\eur}{\ifmmode\text{\texteuro}\else\texteuro\fi}
@@ -60,7 +61,7 @@
 %        wichtigste Ergebnisse und Fazit (~150-250 Woerter)
 % ============================================================
 \begin{abstract}
-This paper investigates the effect of digital-twin-based predictive maintenance on the automotive aftersales domain, focusing on the German passenger-car market. A model-based gap analysis is conducted to compare the interval-based current state against a digital-twin-enabled target state along the full customer journey. Based on this comparison, the business potential is quantified using a transparent assumption framework anchored in published German market data. The results show that proactive, data-driven service recommendations raise the repair capture rate from 40 to 70 percent, increasing wear-part gross profit by approximately 53 EUR per vehicle per year and 263,000 EUR annually across a 5,000-vehicle fleet. Customer touchpoints grow from 1.6 to roughly 2.7 per year, each representing an additional advisory and upselling opportunity. The analysis further identifies data access, rather than technology maturity, as the dominant adoption barrier. Together, these results establish a transparent, contestable model of the potential that dealerships and original equipment manufacturers can use to evaluate and plan the integration of digital-twin-based predictive maintenance into their aftersales operations.
+This paper investigates the effect of digital-twin-based predictive maintenance on the automotive aftersales domain, focusing on the German passenger-car market. A model-based gap analysis is conducted to compare the interval-based current state against a digital-twin-enabled target state along the full customer journey. Based on this comparison, the business potential is quantified using a transparent assumption framework anchored in published German market data. The results show that proactive, data-driven service recommendations raise the repair capture rate from 40 to 70 percent, increasing wear-part gross profit by approximately 53 EUR per vehicle per year and 263,000 EUR annually across a 5,000-vehicle fleet. Customer touchpoints increase by up to 1.1 per year, from 1.6 to roughly 2.7, each representing an additional advisory and upselling opportunity. The analysis further identifies data access, rather than technology maturity, as the dominant adoption barrier. Together, these results establish a transparent, contestable model of the potential that dealerships and original equipment manufacturers can use to evaluate and plan the integration of digital-twin-based predictive maintenance into their aftersales operations.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -358,8 +359,11 @@ Applying the service gross margin (A6) gives the captured gross profit.
 \paragraph*{Step 3 --- KPIs}
 Table~\ref{tab:kpi} summarizes the comparison. Revenue and gross-profit figures
 are per vehicle per year; the fleet column scales the gross-profit delta
-linearly to a representative franchised group of 5{,}000 active customer
-vehicles.
+linearly to a franchised dealer group with 5{,}000 active customer
+vehicles. This size is an illustrative reference for a mid-size,
+multi-location dealer group rather than an empirical average; because all
+fleet-level figures are linear in fleet size, the results transfer
+proportionally to smaller or larger portfolios.
  
 \begin{table}[h!]
 \caption{Current-state / target-state KPI comparison. Delta figures computed directly on unrounded intermediate values; current and target cells rounded independently.}
@@ -374,9 +378,8 @@ Repair capture rate              & 40\,\%     & 70\,\%      & +30\,pp \\
 Wear-part revenue (/veh/yr)      & \eur\,156  & \eur\,273   & +\eur\,117 \\
 Gross profit (/veh/yr)           & \eur\,70   & \eur\,123   & +\eur\,53 \\
 Fleet gross profit, 5{,}000 veh (/yr) & \eur\,351k & \eur\,613k  & +\eur\,263k \\
-Customer touchpoints (/yr)       & 1.6        & $\sim$2.7   & +1.1 \\
+Customer touchpoints (/yr)       & 1.6        & up to $\sim$2.7 & +$\leq$1.1 \\
 First-pass inspection rate       & baseline   & improved    & qual. \\
-Lifecycle retention~\cite{mckinsey2025dealer} & $\sim$25\,\% & sustained & qual. \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -385,9 +388,13 @@ The proactive touchpoint count rises because each high-value forecast event
 (the wear parts in Table~\ref{tab:wear} excluding the wiper case,
 $\approx$~1.1 events/yr) triggers an outreach contact that did not exist in
 the interval-based current state. This increases the meaningful contact
-frequency from 1.6 to about 2.7 per year, assuming forecast contacts fall
-outside scheduled service visits; overlap would reduce the net gain modestly.
-Each additional contact is also an advisory and upselling opportunity. The
+frequency from 1.6 to at most about 2.7 per year. The figure is an upper
+bound: forecast events that coincide with a scheduled service visit do not
+create an additional interaction. Even under substantial overlap, however,
+the character of the contact changes---outreach is initiated by the
+dealership with a concrete, vehicle-specific reason rather than a generic
+interval reminder---so each forecast event remains an advisory and upselling
+opportunity regardless of whether it adds a separate visit. The
 targeted parts---brakes and tires above all---are among the most common
 defect categories in the HU~\cite{tuev2026report}, so proactive replacement directly improves the customer's first-pass inspection rate. This is a tangible and communicable benefit: 60\,\% of franchised-dealer customers currently report no additional
 service being offered at their last visit~\cite{dat2026report}.
@@ -447,7 +454,7 @@ The per-vehicle gross-profit uplift of \eur\,53 per year scales to \eur\,263k
 annually across a 5{,}000-vehicle fleet and compounds to approximately
 \eur\,2.1 million over the optimistic eight-year first-owner horizon (A3). The parts
 margin is, however, only the visible component of the value. Each of the
-additional 1.1 contact events per vehicle per year is simultaneously an
+up to 1.1 additional contact events per vehicle per year is simultaneously an
 advisory opportunity and a loyalty-reinforcing interaction, consistently
 linked to increased repurchase intent at the originating dealership~\cite{challagalla_proactive_2009,gonzalez_service_2015}.
 The sensitivity analysis confirms robustness: even at $\cSoll = 0.50$, the
@@ -513,8 +520,8 @@ recommendations. A quantitative potential assessment translated this shift into 
 conservative conversion assumption ($k = 0.50$), the repair capture rate
 rises from 40\,\% to 70\,\%, increasing gross profit by approximately
 \eur\,53 per vehicle per year and \eur\,263k annually across a
-5{,}000-vehicle fleet. Customer touchpoints grow from 1.6 to roughly 2.7 per
-year, each an additional advisory and upselling opportunity. The dominant adoption barrier is non-technical: access to
+5{,}000-vehicle fleet. Customer touchpoints increase by up to 1.1 per
+year, from 1.6 to roughly 2.7, each an additional advisory and upselling opportunity. The dominant adoption barrier is non-technical: access to
 in-vehicle telemetry requires customer consent and OEM provisioning, a
 hurdle any real-world deployment must resolve. 
 
@@ -543,7 +550,7 @@ dominant prognostic target.
 %The authors would like to thank Eduard Dobenko (Mercedes-Benz) for supervising this work.
 
 % Quellen in references.bib eintragen, hier nichts aendern
-\IEEEtriggeratref{20}
+\balance
 \bibliographystyle{IEEEtran}
 \bibliography{references}
  
