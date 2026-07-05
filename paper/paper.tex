@@ -103,7 +103,7 @@ the study (i)~clarifies the interplay of DT and PdM in aftersales, (ii)~compares
 
 The concept of the digital twin was formalized by Grieves~\cite{grieves2014} in a white paper on manufacturing excellence, where it described a virtual replica of a physical product maintained in synchrony with its real-world counterpart throughout the entire asset lifecycle. Since then, the concept has expanded into aerospace, energy, and automotive domains~\cite{wang2023review,wise_go_2000}.
 
-In the automotive domain, this general architecture maps directly onto the connected vehicle. The physical entity is the vehicle itself, equipped with on-board sensors and an On-Board Diagnostic (OBD) interface. Its virtual representation is a cloud-hosted model mirroring component states, degradation histories, and operating conditions. The synchronizing link is the over-the-air (OTA) telematics connection, which transmits telemetry data to the cloud and returns configuration updates to the vehicle~\cite{lopes2025vehicledt,coppola2016connected,zhang2009connected}. Together, this setup transforms the vehicle from a periodically inspected asset into a continuously monitored system---a shift first documented for automotive applications by Zhang et al.~\cite{zhang2009connected}.
+In the automotive domain, this general architecture maps directly onto the connected vehicle. The physical entity is the vehicle itself, equipped with on-board sensors and an On-Board Diagnostics (OBD) interface. Its virtual representation is a cloud-hosted model mirroring component states, degradation histories, and operating conditions. The synchronizing link is the over-the-air (OTA) telematics connection, which transmits telemetry data to the cloud and returns configuration updates to the vehicle~\cite{lopes2025vehicledt,coppola2016connected,zhang2009connected}. Together, this setup transforms the vehicle from a periodically inspected asset into a continuously monitored system---a shift first documented for automotive applications by Zhang et al.~\cite{zhang2009connected}.
 
 %\begin{figure}[h]
 %  \centering
@@ -134,7 +134,7 @@ Three main problem classes structure ML-based PdM. Classification assigns sensor
 
 Aftersales encompasses post-purchase activities that enable customers to access supplier services and resolve product issues through continuous maintenance~\cite{mertins_servitization_1999}. In the automotive context, it represents a dedicated business function comprising maintenance, repair, and warranty offerings to maximize product usage over the entire asset lifecycle while meeting economic and customer-related objectives \cite{sabbagha_impact_2016,balinado_effect_2021}. Building post-sales relationships strengthens customer loyalty, yields actionable insights, and creates upselling and cross-selling opportunities, making the aftersales market increasingly attractive as demand for higher-quality service expands \cite{sabbagha_impact_2016}.  
 
-Historically, once the warranty expires, customer engagement with the dealership tends to decline~\cite{dat2026report}. Within the automotive industry, aftersales services represent a significant source of revenue, with profit margins substantially higher than those generated through vehicle sales~\cite{macbryde_role_2006}. From an economic perspective, the aftersales market has been identified as larger than the primary product sales market across various industries~\cite{bundschuh_how_2003,editorial_universitat_politecnica_de_valencia_impact_2015,wise_go_2000}. Retaining these customers therefore requires modern service processes~\cite{mertins_servitization_1999}.
+Traditionally, once the warranty expires, customer engagement with the dealership tends to decline~\cite{dat2026report}. Within the automotive industry, aftersales services represent a significant source of revenue, with profit margins substantially higher than those generated through vehicle sales~\cite{macbryde_role_2006}. From an economic perspective, the aftersales market has been identified as larger than the primary product sales market across various industries~\cite{bundschuh_how_2003,editorial_universitat_politecnica_de_valencia_impact_2015,wise_go_2000}. Retaining these customers therefore requires modern service processes~\cite{mertins_servitization_1999}.
 
 Proactive aftersales improves customer satisfaction and retention by addressing issues before they are perceived by the customer, enabling more effective service interactions~\cite{challagalla_proactive_2009}. This requires tailoring services to customer needs through the integration of operational and informational data~\cite{mertins_servitization_1999}. In the present context, DT-based PdM approaches support predictive interventions and improved asset lifecycle optimization, resulting in reduced costs, increased customer satisfaction, and extended asset lifetimes~\cite{gonzalez-pridaDigitalTransformationAftersales2025}.
 
@@ -193,7 +193,7 @@ manufacturer schedules and visible failure signals. The vehicle operates without
 continuous component-state monitoring; no wear forecast is computed during
 normal driving. Consequently, most process steps are physical in nature and therefore cannot be represented in the digital lane. The lifecycle is initiated by the customer rather than the
 dealership: beginning with the appointment request, the subsequent process remains largely customer-driven.
-Service is triggered either by a time- or mileage-based reminder or by an acute fault, such as a warning lamp. Both triggers are decoupled from the actual component condition: maintenance intervals are set conservatively, leading to premature replacement of components with substantial RUL, whereas fault-based triggers often occur only after wear limits have already been exceeded.~\cite{abougrad2026xai}.
+Service is triggered either by a time- or mileage-based reminder or by an acute fault, such as a warning lamp. Both triggers are decoupled from the actual component condition: maintenance intervals are set conservatively, leading to premature replacement of components with substantial RUL, whereas fault-based triggers often occur only after wear limits have already been exceeded~\cite{abougrad2026xai}.
 
 Most process steps are controlled by the customer and only sparsely supported by digital information because no data on the actual condition of vehicle components are available. As no proactive outreach precedes a fault, customers retain complete freedom to choose a repair provider at the moment of highest urgency, causing many unplanned repairs to be captured by independent third-party workshops~\cite{dat2026report}. Such loss of control weakens the dealership's long-term customer relationship.
 
@@ -454,7 +454,7 @@ the model does not price in.
 \subsection{Interpretation of Results}
 
 The per-vehicle gross-profit uplift of \eur\,53 per year scales to \eur\,263k
-annually across a 5{,}000-vehicle fleet and compounds to approximately
+annually across a 5{,}000-vehicle fleet, resulting in approximately
 \eur\,2.1 million over the optimistic eight-year first-owner horizon (A3). The parts
 margin is, however, only the visible component of the value. Each of the
 up to 1.1 additional contact events per vehicle per year is simultaneously an
@@ -477,7 +477,7 @@ return-on-investment figure.
 
 The DT/ML/OTA technology stack is commercially mature and not the binding
 constraint~\cite{lopes2025vehicledt,abougrad2026xai}. The real bottleneck is
-the telemetry access: as outlined in Section~\ref{sec:lim}, in-vehicle data
+telemetry access: as outlined in Section~\ref{sec:lim}, in-vehicle data
 reaches the dealer only with the owner's consent and on OEM-provisioned
 terms, making the dealer dependent on two actors it does not control. The practical recommendation is therefore to build consent infrastructure---opt-in
 flows integrated into the CRM and clear customer value propositions---as a
