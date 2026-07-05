@@ -242,21 +242,22 @@ A7 & Franchised share      & 47\,\%~\cite{dat2026report} \\
 \bottomrule
 \end{tabularx}
 \end{table}
- 
+
 The wear parts in A5 are deliberately limited to components whose wear is
-gradual, usage-driven and not readily perceived by the driver --- the class for
-which a forecast adds the most decision value and which dominates both
-between-interval failures and the most common defect categories in the mandatory
-German vehicle safety inspection (Hauptuntersuchung, HU: brakes, lighting,
-tyres)~\cite{tuev2026report}. Prescriptive maintenance and powertrain overhauls
-are out of scope. Typical replacement intervals and representative German market
-prices (parts plus labour, incl.\ VAT) are given in Table~\ref{tab:wear} for the
-reference vehicle (A1). All values are midpoints of published German market
-ranges~\cite{adac2024repair}; actual intervals and prices vary substantially by
-vehicle class---compact and entry-level vehicles tend toward the lower end of each
-range, while premium and SUV segments tend toward the upper end. Where a published
-range exists, a representative midpoint value is used; the sensitivity analysis
-brackets this residual uncertainty.
+gradual, usage-driven, and not readily perceived by the driver---the class
+for which a forecast adds the most decision value. This class also dominates
+both between-interval failures and the most common defect categories in the
+mandatory German vehicle safety inspection (Hauptuntersuchung, HU: brakes,
+lighting, tires)~\cite{tuev2026report}. Prescriptive maintenance
+and powertrain overhauls are out of scope. Typical replacement
+intervals and representative German market prices (parts plus
+labor, incl.\ VAT) are given in Table~\ref{tab:wear} for the reference
+vehicle (A1). All values are midpoints of published German
+market ranges~\cite{adac2024repair}; actual intervals and prices vary
+substantially by vehicle class---compact and entry-level vehicles
+tend toward the lower end of each range, while premium and
+SUV segments tend toward the upper end. The sensitivity analysis
+brackets the residual uncertainty from this simplification.
  
 \begin{table}[ht!]
 \caption{Wear-part assumptions for reference vehicle A1 (mid-segment ICE). All values are midpoints of published German market ranges~\cite{adac2024repair}; actual intervals and prices vary by vehicle class}
@@ -275,20 +276,20 @@ Spark plugs (set)          & 60{,}000 km  & 0.22 & \eur\,150 \\
 \bottomrule
 \end{tabularx}
 \end{table}
- 
-For the mechanism, we model a single lever: the \emph{repair capture rate}~$c$,
+
+For the mechanism, a single lever is modeled: the \emph{repair capture rate}~$c$,
 the share of addressable wear-part work performed at the franchised dealership
 rather than lost to an independent workshop. Its complement $(1-c)$ is the
-leakage. The current capture rate, the forecast accuracy, and the proactive-offer
-conversion are stated in Table~\ref{tab:mech}; the target capture rate is not
-assumed independently but derived from them.
+leakage. The current capture rate, forecast accuracy, and proactive-offer
+conversion are stated in Table~\ref{tab:mech}; the target capture rate is derived
+analytically instead of being assumed directly.
 
-The target capture rate is derived, not assumed: of the leaked share
-$(1-\cIst)$, the fraction that PdM forecasts ($a$) and that converts on a
-proactive offer ($k$) is recaptured. We set $a{=}1$ because customers cannot
-distinguish a true-positive forecast from a false-positive recommendation---every
-offer is evaluated and accepted or declined at rate $a \cdot k$ regardless of
-whether the underlying wear has fully materialised:
+Of the leaked share $(1-\cIst)$, the fraction recaptured is the product of the
+forecast rate ($a$) and the proactive-offer conversion rate ($k$). The value
+$a{=}1$ is set because customers cannot distinguish a true-positive forecast
+from a false-positive recommendation. Every offer is therefore evaluated and
+accepted or declined at rate $a \cdot k$, regardless of whether the underlying
+wear has fully materialized:
 \begin{align}
 \cSoll &= \cIst + (1-\cIst)\cdot a \cdot k \notag \\
        &= 0.40 + 0.60 \cdot 1.0 \cdot 0.50 \notag \\
@@ -312,11 +313,16 @@ A10 & Proactive-offer conversion ($k$)     & 0.50            & Conserv.\ est.~\c
 \end{tabularx}
 \end{table}
 
-This construction keeps the estimate conservative and never approaches full capture.
-The conversion rate ($k = 0.50$, A10) is a conservative estimate: proactive,
-personalised maintenance contact from the customer's own dealership is consistent
-with findings that proactive contact aids uptake and loyalty~\cite{challagalla_proactive_2009,gonzalez_service_2015},
-yet price competition from independent workshops and customer inertia toward switching service providers prevent full conversion, making 0.50 a deliberate floor rather than a central estimate. The value of $k$ is not empirically measured in this context; calibrating it against real customer-behaviour data is identified as a direct future-work priority (Section~\ref{sec:future}).
+This construction keeps the estimate conservative and never approaches full
+capture. The conversion rate ($k = 0.50$, A10) reflects this: proactive,
+personalized maintenance contact from the customer's own dealership is
+consistent with findings that proactive contact aids uptake and
+loyalty~\cite{challagalla_proactive_2009,gonzalez_service_2015}. Yet price
+competition from independent workshops and customer inertia toward switching
+service providers prevent full conversion, so the value of $k$ is treated as
+a deliberate floor rather than a central estimate. The value of $k$ is not empirically
+measured in this context; calibrating it against real customer-behavior data
+is identified as a direct future-work priority (Section~\ref{sec:future}).
 
 \subsection{Potential Assessment}
 
@@ -328,6 +334,7 @@ fleet and lifecycle level.
 For each part $i$, the expected annual revenue is its replacement rate
 $\lambda_i\;[\mathrm{yr}^{-1}]$ multiplied by its unit price $p_i$; both are
 from Table~\ref{tab:wear}, with $\lambda_i$ computed on unrounded mileage~(A2).
+
 Summing across~A5 yields the annual addressable wear-part revenue per vehicle:
 \begin{gather*}
 V_{\mathrm{wear}} = \sum_{i}\,\lambda_i \cdot p_i \\
@@ -371,16 +378,14 @@ Lifecycle retention~\cite{mckinsey2025dealer} & $\sim$25\,\% & sustained & qual.
  
 The proactive touchpoint count rises because each high-value forecast event
 (the wear parts in Table~\ref{tab:wear} excluding the wiper case,
-$\approx$~1.1 events/yr) triggers an outreach contact that did not exist in the
-interval-based current state, increasing the meaningful contact frequency
-from 1.6 to about 2.7 per year, assuming forecast contacts fall outside
-scheduled service visits; overlap would reduce the net gain modestly. Each additional contact is also an advisory and
-upselling opportunity; the parts targeted---brakes and tyres above all---are
-among the most common defect categories in the German mandatory vehicle safety
-inspection (HU)~\cite{tuev2026report}, so proactive replacement directly improves the
-customer's first-pass inspection rate, a tangible and communicable benefit---currently
-60\,\% of franchised-dealer customers report not being approached about any
-additional service at their last visit~\cite{dat2026report}.
+$\approx$~1.1 events/yr) triggers an outreach contact that did not exist in
+the interval-based current state. This increases the meaningful contact
+frequency from 1.6 to about 2.7 per year, assuming forecast contacts fall
+outside scheduled service visits; overlap would reduce the net gain modestly.
+Each additional contact is also an advisory and upselling opportunity. The
+targeted parts---brakes and tires above all---are among the most common
+defect categories in the HU~\cite{tuev2026report}, so proactive replacement directly improves the customer's first-pass inspection rate. This is a tangible and communicable benefit: 60\,\% of franchised-dealer customers currently report no additional
+service being offered at their last visit~\cite{dat2026report}.
  
 \paragraph*{Sensitivity}
 The result depends most on the target capture rate. Varying $\cSoll$ across a
@@ -392,12 +397,12 @@ gives a per-vehicle gross-profit delta of:
 \cSoll = 0.70 &\;\rightarrow\; \Delta \text{ gross profit} \approx \eur\,53~\text{/veh/yr,} \\
 \cSoll = 0.80 &\;\rightarrow\; \Delta \text{ gross profit} \approx \eur\,70~\text{/veh/yr.}
 \end{align*}
-Even at the conservative end the dealership captures additional gross profit on
-the order of tens of euros per vehicle per year, scaling to a six-figure annual
-sum across a mid-size fleet---compounding effects are likely given that 90\,\% of
-German vehicle owners consistently return to the same workshop~\cite{dat2026report}. The
-economic case is therefore robust to the assumptions rather than an artefact of
-any single optimistic value.
+Even at the conservative end, the dealership captures additional gross profit
+on the order of tens of euros per vehicle per year, scaling to a six-figure
+annual sum across a mid-size fleet. Compounding effects are likely given
+that 90\,\% of German vehicle owners consistently return to the same
+workshop~\cite{dat2026report}. The economic case is therefore robust to the
+assumptions rather than an artifact of any single optimistic value.
 
 \subsection{Limitations}\label{sec:lim}
 
