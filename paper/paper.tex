@@ -77,7 +77,7 @@ Today's vehicles are connected by default and continuously transmit operational
 data \cite{lopes2025vehicledt,coppola2016connected}, so the information required
 to assess their technical condition is largely available. Nevertheless, automotive aftersales remains reactive: even well-connected vehicles are serviced on fixed time or mileage
 intervals rather than on the actual condition of their components \cite{national_transport_university_overview_2023}.
-Wear parts---brake pads and discs, tires, ignition components, or wipers---are typically replaced only after wear or failure, leading to unplanned repairs frequently carried out by independent third-party workshops \cite{alexander_secret_2002}. For the
+Wear parts---brake pads and discs, tires, ignition components, and wipers---are typically replaced only after wear or failure, leading to unplanned repairs frequently carried out by independent third-party workshops \cite{alexander_secret_2002}. For the
 dealership, which owns the customer relationship, this means losing
 repair revenue and valuable interactions, reducing opportunities for
 customer advice, retention, and upselling \cite{challagalla_proactive_2009,sabbagha_impact_2016}.
@@ -86,7 +86,7 @@ Digital-twin-based predictive maintenance (PdM) can turn this data into
 foresight. A digital twin (DT) maintains a synchronized virtual representation of
 the vehicle \cite{grieves2014}, against which machine-learning (ML) models forecast
 the remaining useful life (RUL) of components and recommend replacement before
-failure---supporting closer customer retention at the dealership. While the building blocks of DT-based PdM are well studied
+failure---strengthening customer retention at the dealership. While the building blocks of DT-based PdM are well studied
 in industrial settings \cite{wang2023review,abougrad2026xai},
 their integration into automotive aftersales remains underexplored.
 
@@ -124,7 +124,7 @@ In the automotive domain, this general architecture maps directly onto the conne
 
 Vehicle maintenance strategies form a maturity hierarchy: reactive maintenance repairs only after failure \cite{abougrad2026xai}; preventive maintenance schedules service at fixed mileage or time intervals, leading to either premature replacement or undetected wear \cite{abougrad2026xai,aichi2024multilayered}; condition-based maintenance (CBM) couples the service decision to sensor thresholds \cite{aichi2024multilayered}; and PdM extends CBM by forecasting the future evolution of degradation, estimating the remaining time or distance until failure \cite{kumar2025suspension,abougrad2026xai}.
 
-At this scale, PdM is not a stand-alone technique but a service layer built on a DT of the vehicle. As described by Lopes et al.~\cite{lopes2025vehicledt} and El Hadraoui et al.~\cite{aichi2024multilayered}, the DT provides the synchronized virtual representation against which sensor streams are interpreted, anomalies detected, and RUL estimates computed. In current automotive DT architectures, predictive analytics is therefore typically positioned as a dedicated microservice within the DT's analytics core \cite{lopes2025vehicledt,karthick2025simulating}.
+In this architecture, PdM is not a stand-alone technique but a service layer built on a DT of the vehicle. As described by Lopes et al.~\cite{lopes2025vehicledt} and El Hadraoui et al.~\cite{aichi2024multilayered}, the DT provides the synchronized virtual representation against which sensor streams are interpreted, anomalies detected, and RUL estimates computed. In current automotive DT architectures, predictive analytics is therefore typically positioned as a dedicated microservice within the DT's analytics core \cite{lopes2025vehicledt,karthick2025simulating}.
 
 \subsection{Machine Learning in Predictive Maintenance}
 
@@ -134,7 +134,7 @@ Three main problem classes structure ML-based PdM. Classification assigns sensor
 
 Aftersales encompasses post-purchase activities that enable customers to access supplier services and resolve product issues through continuous maintenance~\cite{mertins_servitization_1999}. In the automotive context, it represents a dedicated business function comprising maintenance, repair, and warranty offerings to maximize product usage over the entire asset lifecycle while meeting economic and customer-related objectives \cite{sabbagha_impact_2016,balinado_effect_2021}. Building post-sales relationships strengthens customer loyalty, yields actionable insights, and creates upselling and cross-selling opportunities, making the aftersales market increasingly attractive as demand for higher-quality service expands \cite{sabbagha_impact_2016}.  
 
-Historically, once the warranty expires, customer engagement with the dealership tends to decline. Within the automotive industry, aftersales services represent a significant source of revenue, with profit margins substantially higher than those generated through vehicle sales~\cite{macbryde_role_2006}. From an economic perspective, the aftersales market has been identified as larger than the primary product sales market across various industries~\cite{bundschuh_how_2003,editorial_universitat_politecnica_de_valencia_impact_2015,wise_go_2000}. Retaining these customers therefore requires modern service processes~\cite{mertins_servitization_1999}.
+Historically, once the warranty expires, customer engagement with the dealership tends to decline~\cite{dat2026report}. Within the automotive industry, aftersales services represent a significant source of revenue, with profit margins substantially higher than those generated through vehicle sales~\cite{macbryde_role_2006}. From an economic perspective, the aftersales market has been identified as larger than the primary product sales market across various industries~\cite{bundschuh_how_2003,editorial_universitat_politecnica_de_valencia_impact_2015,wise_go_2000}. Retaining these customers therefore requires modern service processes~\cite{mertins_servitization_1999}.
 
 Proactive aftersales improves customer satisfaction and retention by addressing issues before they are perceived by the customer, enabling more effective service interactions~\cite{challagalla_proactive_2009}. This requires tailoring services to customer needs through the integration of operational and informational data~\cite{mertins_servitization_1999}. In the present context, DT-based PdM approaches support predictive interventions and improved asset lifecycle optimization, resulting in reduced costs, increased customer satisfaction, and extended asset lifetimes~\cite{gonzalez-pridaDigitalTransformationAftersales2025}.
 
@@ -192,7 +192,7 @@ manufacturer schedules and visible failure signals. The vehicle operates without
 continuous component-state monitoring; no wear forecast is computed during
 normal driving. Consequently, most process steps are physical in nature and therefore cannot be represented in the digital lane. The lifecycle is initiated by the customer rather than the
 dealership: beginning with the appointment request, the subsequent process remains largely customer-driven.
-Service is triggered either by a time- or mileage-based reminder or by an acute fault, such as a warning lamp. Both represent late-stage maintenance triggers: maintenance intervals are set conservatively, leaving many components with substantial RUL, whereas fault-based triggers often occur only after wear limits have already been exceeded~\cite{abougrad2026xai}.
+Service is triggered either by a time- or mileage-based reminder or by an acute fault, such as a warning lamp. Both triggers are decoupled from the actual component condition: maintenance intervals are set conservatively, leading to premature replacement of components with substantial RUL, whereas fault-based triggers often occur only after wear limits have already been exceeded.~\cite{abougrad2026xai}.
 
 Most process steps are controlled by the customer and only sparsely supported by digital information because no data on the actual condition of vehicle components are available. As no proactive outreach precedes a fault, customers retain complete freedom to choose a repair provider at the moment of highest urgency, causing many unplanned repairs to be captured by independent third-party workshops~\cite{dat2026report}. Such loss of control weakens the dealership's long-term customer relationship.
 
@@ -254,8 +254,8 @@ gradual, usage-driven, and not readily perceived by the driver---the class
 for which a forecast adds the most decision value. This class also dominates
 both between-interval failures and the most common defect categories in the
 mandatory German vehicle safety inspection (Hauptuntersuchung, HU: brakes,
-lighting, tires)~\cite{tuev2026report}. Prescriptive maintenance
-and powertrain overhauls are out of scope. Typical replacement
+lighting, tires)~\cite{tuev2026report}. Scheduled maintenance services
+(e.g., inspections and oil changes) and powertrain overhauls are out of scope. Typical replacement
 intervals and representative German market prices (parts plus
 labor, incl.\ VAT) are given in Table~\ref{tab:wear} for the reference
 vehicle (A1). All values are midpoints of published German
@@ -293,8 +293,8 @@ analytically instead of being assumed directly.
 Of the leaked share $(1-\cIst)$, the fraction recaptured is the product of the
 forecast rate ($a$) and the proactive-offer conversion rate ($k$). The value
 $a{=}1$ is set because customers cannot distinguish a true-positive forecast
-from a false-positive recommendation. Every offer is therefore evaluated and
-accepted or declined at rate $a \cdot k$, regardless of whether the underlying
+from a false-positive recommendation. Every forecast therefore results in an
+offer that is accepted at rate $a \cdot k$, regardless of whether the underlying
 wear has fully materialized:
 \begin{align}
 \cSoll &= \cIst + (1-\cIst)\cdot a \cdot k \notag \\
@@ -333,8 +333,8 @@ is identified as a direct future-work priority (Section~\ref{sec:future}).
 \subsection{Potential Assessment}
 
 The calculation proceeds in three steps: the addressable wear-part value per
-vehicle, the captured value under each state, and the resulting KPIs at vehicle,
-fleet and lifecycle level.
+vehicle, the captured value under each state, and the resulting KPIs at vehicle and
+fleet level.
  
 \paragraph*{Step 1 --- Addressable wear-part value}
 For each part $i$, the expected annual revenue is its replacement rate
@@ -432,7 +432,7 @@ Second, the reported PdM forecast accuracy ($\approx$90\,\%) is stated for
 transparency but does not enter the capture-rate formula. A proactive service recommendation looks identical to the customer
 regardless of whether the underlying forecast is correct or slightly
 premature. Both true-positive and false-positive predictions therefore
-generate the same type of offer, accepted or declined at rate $k$. Accuracy
+generate the same type of offer, which is accepted at rate $k$. Accuracy
 will improve as in-service data accumulates~\cite{abougrad2026xai},
 but the model outcome does not depend on reaching any particular accuracy
 threshold. 
