@@ -16,4 +16,8 @@ Das ist oft ein stiller Abzugsgrund. Wenn die Lifecycle-Grafik pixelig oder unei
 
 8. Restliche Fehler: Syntaktisch, Semantisch und so prüfen 
 
+9. Abkürzungen prüfen
+
+10. Absätze pürfen
+
 Parallel Poster machen

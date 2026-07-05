@@ -436,58 +436,56 @@ the model does not price in.
 \subsection{Interpretation of Results}
 
 The per-vehicle gross-profit uplift of \eur\,53 per year scales to \eur\,263k
-annually across a 5{,}000-vehicle fleet and compounds to approximately \eur\,2.1
-million over the eight-year first-owner horizon (A3). The parts margin is,
-however, only the visible component of the value: each of the additional 1.1
-contact events per vehicle per year is simultaneously an advisory opportunity and
-a loyalty-reinforcing interaction, consistently linked to increased repurchase
-intent at the originating dealership~\cite{challagalla_proactive_2009,gonzalez_service_2015}.
+annually across a 5{,}000-vehicle fleet and compounds to approximately
+\eur\,2.1 million over the optimistic eight-year first-owner horizon (A3). The parts
+margin is, however, only the visible component of the value. Each of the
+additional 1.1 contact events per vehicle per year is simultaneously an
+advisory opportunity and a loyalty-reinforcing interaction, consistently
+linked to increased repurchase intent at the originating dealership~\cite{challagalla_proactive_2009,gonzalez_service_2015}.
 The sensitivity analysis confirms robustness: even at $\cSoll = 0.50$, the
-fleet-level gain remains approximately \eur\,90k per year---a positive business
-case under any plausible conversion scenario.
+fleet-level gain remains approximately \eur\,90k per year---a positive
+business case under any plausible conversion scenario.
 
 The model deliberately quantifies only the benefit side: investment costs for
 the DT platform, CRM integration, and consent infrastructure are OEM- and
-dealer-specific and not publicly available. The gross-profit delta nevertheless
-defines a break-even threshold---at \eur\,53 per vehicle per year, the system
-pays off as long as its total running cost remains below roughly \eur\,4.40 per
-connected vehicle per month---giving practitioners a concrete benchmark against
-vendor pricing rather than a speculative return-on-investment figure.
+dealer-specific and not publicly available. The gross-profit delta
+nevertheless defines a break-even threshold. At \eur\,53 per vehicle per
+year, the system pays off as long as its total running cost remains below
+roughly \eur\,4.40 per connected vehicle per month. This gives practitioners
+a concrete benchmark against vendor pricing rather than a speculative
+return-on-investment figure.
 
 \subsection{The Non-Technical Barrier}
 
 The DT/ML/OTA technology stack is commercially mature and not the binding
 constraint~\cite{lopes2025vehicledt,abougrad2026xai}. The real bottleneck is
-telemetry access: as outlined in Section~\ref{sec:lim}, in-vehicle data reaches
-the dealer only with the owner's consent and on OEM-provisioned
-terms~\cite{eu2023dataact}, making the dealer dependent on two actors it does
-not control. The practical recommendation is therefore to build
-consent infrastructure---opt-in flows integrated into the CRM, clear customer
-value propositions---as a prerequisite rather than an afterthought, independently
-of any specific DT deployment decision.
+the telemetry access: as outlined in Section~\ref{sec:lim}, in-vehicle data
+reaches the dealer only with the owner's consent and on OEM-provisioned
+terms, making the dealer dependent on two actors it does not control. The practical recommendation is therefore to build consent infrastructure---
+opt-in flows integrated into the CRM and clear customer value propositions---
+as a prerequisite rather than an afterthought. This holds independently of
+any specific DT deployment decision.
 
 \subsection{Implications for Practice and Research}
 
-Practitioners should position DT-based PdM as a CRM extension rather than an IT
-project. The measurable value driver is the quality of proactive outreach, not
-forecast accuracy~\cite{challagalla_proactive_2009,gonzalez-pridaDigitalTransformationAftersales2025};
+Practitioners should position DT-based PdM as a CRM extension rather than an
+IT project. The measurable value driver is the quality of proactive outreach,
+not forecast accuracy~\cite{challagalla_proactive_2009,gonzalez-pridaDigitalTransformationAftersales2025};
 appointment-scheduling integration and communication design should therefore
 precede algorithm tuning. A phased entry via OEM brands that already expose
 connected-car telemetry APIs allows conversion rates to be measured before a
 broader infrastructure commitment is made.
 
-For researchers, the priority is empirical validation of the conversion
-rate~$k$, which is modelled here but not fitted to operational data. A field
+For researchers, the priority is the empirical validation of the conversion
+rate~$k$, which is modeled here but not fitted to operational data. A field
 study measuring opt-in and outreach acceptance rates would directly calibrate
-this parameter. A second priority is extending the framework to battery electric
-vehicles, where the high-voltage battery's state of health replaces spark plugs
-as the dominant prognostic target.
+this parameter.
 
-Beyond the dealership's business case, DT-based PdM exemplifies the shift from
-merely smart to wise information systems: replacing parts on evidence rather
-than on fixed intervals avoids premature replacement and the associated material
-waste, the explicit assumption framework keeps the decision model transparent
-and contestable, and consent-based data access keeps the customer in control of
+Beyond the dealership's business case, DT-based PdM exemplifies the shift
+from merely smart to wise information systems. Replacing parts on evidence
+instead of fixed intervals avoids premature replacement and the
+associated material waste. The explicit assumption framework keeps the decision model transparent and
+contestable, while consent-based data access keeps the customer in control of
 the decision loop.
 
 
